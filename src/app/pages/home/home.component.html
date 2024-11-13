@@ -1,0 +1,25 @@
+<div class="main-content">
+  <div class="grid-container">
+    <button *ngFor="let item of gridItems" class="grid-button">
+      <span class="material-icons">{{ item.icon }}</span>
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.description }}</p>
+    </button>
+  </div>
+
+  <div class="widgets-column">
+    <div class="widget">
+      <h3>Recent Activity</h3>
+      <p>No recent activities</p>
+    </div>
+    <div class="widget">
+      <h3>Quick Stats</h3>
+      <p>Total items: 42</p>
+      <p>Pending: 7</p>
+    </div>
+    <div class="widget">
+      <h3>Notifications</h3>
+      <p>You have 3 new notifications</p>
+    </div>
+  </div>
+</div>

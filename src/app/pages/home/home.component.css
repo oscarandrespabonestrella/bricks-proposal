@@ -1,0 +1,62 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  flex: 1;
+}
+
+.main-content {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+}
+
+.grid-button {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.grid-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.grid-button .material-icons {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #4285f4;
+}
+
+.grid-button h3 {
+  margin: 0 0 8px 0;
+  color: #333;
+}
+
+.grid-button p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.widgets-column {
+  width: 300px;
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.widget {
+  background-color: white;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}

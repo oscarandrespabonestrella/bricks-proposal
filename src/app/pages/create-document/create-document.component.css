@@ -1,0 +1,114 @@
+.document-form {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.document-form .section {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+.document-form .section:last-child {
+  border-bottom: none;
+}
+.document-form .section-title {
+  color: #1a73e8;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+.document-form .form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.document-form .form-group {
+  margin-bottom: 1rem;
+}
+.document-form .form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #5f6368;
+  font-size: 0.9rem;
+}
+.document-form .form-control {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+.document-form .form-control:focus {
+  outline: none;
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+}
+.document-form .format-options {
+  display: flex;
+  gap: 1rem;
+}
+.document-form .format-options label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.document-form .file-upload-area {
+  border: 2px dashed #dadce0;
+  border-radius: 4px;
+  padding: 2rem;
+  text-align: center;
+  background-color: #f8f9fa;
+}
+.document-form .file-upload-area .upload-placeholder {
+  color: #5f6368;
+}
+.document-form .file-upload-area .upload-placeholder i {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.document-form .checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.document-form .checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.document-form .form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.document-form .form-actions .btn {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s;
+}
+.document-form .form-actions .btn-primary {
+  background-color: #1a73e8;
+  color: white;
+}
+.document-form .form-actions .btn-primary:hover {
+  background-color: #1557b0;
+}
+.document-form .form-actions .btn-primary:disabled {
+  background-color: #dadce0;
+  cursor: not-allowed;
+}
+.document-form .form-actions .btn-secondary {
+  background-color: #f8f9fa;
+  color: #5f6368;
+  border: 1px solid #dadce0;
+}
+.document-form .form-actions .btn-secondary:hover {
+  background-color: #e8eaed;
+}

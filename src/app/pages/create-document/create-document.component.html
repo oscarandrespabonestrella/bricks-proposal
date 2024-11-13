@@ -1,0 +1,124 @@
+<div class="document-form">
+<form [formGroup]="documentForm" (ngSubmit)="onSubmit()">
+  <!-- Document Details Section -->
+  <section class="section">
+    <h2 class="section-title">Document Details</h2>
+    <div class="form-group">
+      <label for="documentTitle">Document title *</label>
+      <input id="documentTitle" type="text" formControlName="documentTitle" class="form-control">
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="documentType">Document type *</label>
+        <input id="documentType" type="text" formControlName="documentType" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="documentDate">Document date</label>
+        <input id="documentDate" type="date" formControlName="documentDate" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label>Format</label>
+        <div class="format-options">
+          <label *ngFor="let format of formats">
+            <input type="radio" [value]="format" formControlName="format">
+            {{format}}
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="mainLanguage">Main language</label>
+        <select id="mainLanguage" formControlName="mainLanguage" class="form-control">
+          <option *ngFor="let lang of languages" [value]="lang">{{lang}}</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <!-- Restrictions Section -->
+  <section class="section">
+    <h2 class="section-title">Restrictions</h2>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="marking">Marking</label>
+        <input id="marking" type="text" formControlName="marking" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="draftingMode">Drafting mode</label>
+        <div class="toggle">
+          <input id="draftingMode" type="checkbox" formControlName="draftingMode">
+          <label for="draftingMode">Unrestricted</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="embargoUntil">Embargo until</label>
+        <input id="embargoUntil" type="date" formControlName="embargoUntil" class="form-control">
+      </div>
+    </div>
+  </section>
+
+  <!-- Recipients Section -->
+  <section class="section">
+    <h2 class="section-title">Recipients</h2>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="from">From</label>
+        <input id="from" type="text" formControlName="from" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="isAnonymous">Anonymous</label>
+        <input id="isAnonymous" type="checkbox" formControlName="isAnonymous">
+      </div>
+
+      <div class="form-group">
+        <label for="to">To</label>
+        <input id="to" type="text" formControlName="to" class="form-control">
+      </div>
+    </div>
+  </section>
+
+  <!-- Files Section -->
+  <section class="section">
+    <h2 class="section-title">Files</h2>
+    <div class="file-upload-area">
+      <div class="upload-placeholder">
+        <i class="fas fa-cloud-upload-alt"></i>
+        <p>Drag files to this area to upload or browse</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Advanced Information -->
+  <section class="section">
+    <h2 class="section-title">Advanced Information</h2>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Additional Options</label>
+        <div class="checkbox-group">
+          <label>
+            <input type="checkbox" formControlName="annexesScanned">
+            Annexes scanned
+          </label>
+          <label>
+            <input type="checkbox" formControlName="translationRequested">
+            Translation requested
+          </label>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form Actions -->
+  <div class="form-actions">
+    <button type="button" class="btn btn-secondary" (click)="onCancel()">Cancel</button>
+    <button type="button" class="btn btn-secondary" (click)="onSaveTemporarily()">Save temporarily</button>
+    <button type="submit" class="btn btn-primary" [disabled]="!documentForm.valid">Register document</button>
+  </div>
+</form>
+</div>
