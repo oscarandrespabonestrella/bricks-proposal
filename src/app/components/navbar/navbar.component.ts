@@ -87,9 +87,86 @@ import { DropdownTriggerForDirective } from '../dropdown/dropdown-trigger-for.di
           </div>
           
           <my-dropdown #dropdown>
-            <div  class="dropdown-item">Cut</div>
-            <div  class="dropdown-item">Copy</div>
-            <div  class="dropdown-item">Paste</div>
+            <div class="dropdown-menu">
+              <button class="profile-button" onClick={onClick}>
+                <div class="avatar">
+                  NB
+                </div>
+                <div class="profile-info">
+                  <div class="profile-name">NIJHOF Bernd</div>
+                  <div class="profile-email">Bernd.NIJHOFamexiogrou...</div>
+                </div>
+              </button>
+              <div class="menu-section">
+                <button class="menu-item">
+                  <div class="menu-item-content">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/>
+                      <circle cx="12" cy="12" r="3"/>
+                    </svg>
+                    <span class="font">Settings</span>
+                  </div>
+                </button>
+              </div>
+
+              <div class="menu-section">
+                <button class="menu-item">
+                  <div class="menu-item-with-chevron">
+                    <div class="menu-item-content">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                      </svg>
+                      <span>Show Hierarchy Below</span>
+                    </div>
+                    
+                  </div>
+                </button>
+
+                <button class="menu-item">
+                  <div class="menu-item-with-chevron">
+                    <div class="menu-item-content">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <circle cx="12" cy="10" r="3"/>
+                        <path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"/>
+                      </svg>
+                      <span>Switch Profile</span>
+                    </div>
+                    
+                  </div>
+                </button>
+
+                <button class="menu-item">
+                  <div class="menu-item-with-chevron">
+                    <div class="menu-item-content">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <circle cx="12" cy="10" r="3"/>
+                        <path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"/>
+                      </svg>
+                      <span>Switch Role</span>
+                    </div>
+                    
+                  </div>
+                </button>
+              </div>
+
+              <div class="menu-section">
+                <button class="menu-item">
+                  <div class="menu-item-content">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                      <polyline points="16 17 21 12 16 7"/>
+                      <line x1="21" y1="12" x2="9" y2="12"/>
+                    </svg>
+                    <span>Logout</span>
+                  </div>
+                </button>
+              </div>
+            </div>
           </my-dropdown>
       </div>
 
@@ -219,6 +296,100 @@ import { DropdownTriggerForDirective } from '../dropdown/dropdown-trigger-for.di
     .navbar-nav .nav-item .nav-link.active {
       border-bottom: 1px solid #3c77bd;
       font-weight: 500;
+    }
+    .dropdown-menu {
+      position: relative;
+      margin-top: 0.5rem;
+      width: 100%;
+      background-color: white;      
+      
+      overflow: hidden;
+    }
+    
+    .menu-section {
+      padding: 0.5rem;
+    }
+    
+    .menu-section + .menu-section {
+      border-top: 1px solid #e5e7eb;
+    }
+    
+    .menu-item {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 0.5rem 0.75rem;
+      color: #374151;
+      border: none;
+      border-radius: 0.375rem;
+      background: none;
+      cursor: pointer;
+      text-align: left;
+    }
+    
+    .menu-item:hover {
+      background-color: #f3f4f6;
+    }
+    
+    .menu-item-content {
+      display: flex;
+      align-items: center;
+      flex: 1;
+    }
+    
+    .menu-item svg {
+      margin-right: 0.75rem;
+    }
+    
+    .menu-item-with-chevron {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+    
+    svg.chevron-icon {
+      margin-left: 0.5rem;
+    }
+    .profile-button {
+      display: flex;
+      align-items: center;
+      background-color: white;
+      border-radius: 0.5rem;
+      padding: 0.5rem;
+      width: 320px;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+    }
+    
+    .profile-button:hover {
+      background-color: #f9fafb;
+    }
+    
+    .avatar {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      background-color: #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #4b5563;
+      margin-right: 0.75rem;
+    }
+    
+    .profile-info {
+      flex: 1;
+    }
+    
+    .profile-name {
+      font-weight: 500;
+    }
+    
+    .profile-email {
+      font-size: 0.875rem;
+      color: #6b7280;
     }
   `,
   ],

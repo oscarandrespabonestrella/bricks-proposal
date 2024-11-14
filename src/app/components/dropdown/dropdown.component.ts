@@ -15,11 +15,12 @@ import { OverlayModule } from '@angular/cdk/overlay';
   templateUrl: './dropdown.component.html',
   styles:`
   .dropdown-content {
-    width: 14rem;
+    width: 19rem;
     padding: 0.5rem 0;
     background-color: white;
     border-radius: 6px;
-    box-shadow: 0 10px 20px rgba(64, 64, 64, 0.15);
+    box-shadow: 0 10px 20px rgba(64, 64, 64, 0.15);   
+    display: flex; 
   }
 
   .dropdown-item {
