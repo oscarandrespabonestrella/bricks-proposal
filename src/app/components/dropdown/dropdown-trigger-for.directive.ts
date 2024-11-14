@@ -12,6 +12,7 @@ import { merge, Observable, Subscription } from 'rxjs';
 
 @Directive({
   selector: '[dropdownTriggerFor]',
+  standalone: true,
   host: {
     '(click)': 'toggleDropdown()',
   },

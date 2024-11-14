@@ -117,6 +117,7 @@ import { CommonModule } from '@angular/common';
       left: 0;
       display: flex;
       flex-direction: column;
+      z-index: 9;
     }
 
     .sidebar.collapsed {

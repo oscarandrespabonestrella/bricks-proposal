@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { SidebarComponent } from '../../components/sidebar/sidebar.component';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
+import { SharedService } from '../../core/shared.service';
 
 @Component({
   selector: 'app-home-layout',
@@ -47,9 +48,7 @@ import { NavbarComponent } from '../../components/navbar/navbar.component';
   ],
 })
 export class HomeLayoutComponent {
-  isSidebarOpen = true;
+  protected sharedService = inject(SharedService);
+  
 
-  toggleSidebar() {
-    this.isSidebarOpen = !this.isSidebarOpen;
-  }
 }
