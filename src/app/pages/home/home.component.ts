@@ -62,36 +62,36 @@ export class HomeComponent {
     {
       title: 'Incoming document',
       description: 'Manage your files',
-      icon: 'upload_file',
+      icon: 'bi bi-file-earmark-arrow-up',
     },
     {
       title: 'Outgoing document',
       description: 'Track your projects',
-      icon: 'post_add',
+      icon: 'bi bi-file-earmark-arrow-down',
     }]
 
     taskButtons = [
       {
         title: 'Open task',
         description: 'lorem ipsum',
-        icon: 'outbox',
+        icon: 'bi bi-inbox',
       },
       {
         title: 'Upcoming task',
         description: 'lorem ipsum',
-        icon: 'upcoming',
+        icon: 'bi bi-inbox-fill',
       },
       {
         title: 'Completed task',
         description: 'lorem ipsum',
-        icon: 'fact_check',
+        icon: 'bi bi-list-check',
       },]
 
       documentsButtons = [
         {
           title: 'Received documents',
           description: 'lorem ipsum',
-          icon: 'file_open',
+          icon: 'bi bi-briefcase',
         },]
   
 }

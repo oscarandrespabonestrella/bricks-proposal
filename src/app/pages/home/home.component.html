@@ -4,7 +4,7 @@
       <h3>Create</h3>
       <div class="grid-container">
         <button *ngFor="let item of createButtons" class="grid-button">          
-          <span class="material-icons">{{ item.icon }}</span>
+          <i [class]="item.icon"></i>          
           <h3>{{ item.title }}</h3>          
         </button>
       </div>
@@ -13,7 +13,7 @@
       <h3>Task</h3>
       <div class="grid-container">
         <button *ngFor="let item of taskButtons" class="grid-button">
-          <span class="material-icons">{{ item.icon }}</span>
+          <i [class]="item.icon"></i>   
           <h3>{{ item.title }}</h3>          
         </button>
       </div>
@@ -22,7 +22,7 @@
       <h3>Documents</h3>
       <div class="grid-container">
         <button *ngFor="let item of documentsButtons" class="grid-button">
-          <span class="material-icons">{{ item.icon }}</span>
+          <i [class]="item.icon"></i> 
           <h3>{{ item.title }}</h3>          
         </button>
       </div>

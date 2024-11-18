@@ -1,9 +1,9 @@
-<div class="h-screen overflow-auto"> 
+<div class="overflow-auto relative "  style="height: 88vh;">     
     <div class="flex justify-between items-center mb-9 px-10">
         <h2 class="text-xl font-semibold">Create assignments</h2>    
     </div>
-    <div class="flex flex-row px-10 gap-7">
-        <div class="w-full bg-white p-5 border-gray-200  border rounded-lg h-fit" [ngClass]="{'basis-2/3': assignmentList.length}">
+    <div class="flex flex-row px-10 gap-7" >
+        <div class="w-full bg-white p-5 border-gray-200  border rounded-lg h-fit" [ngClass]="{'basis-2/3': assignmentList.length}" style="max-height: 80vh;">
             <div class="inline-flex rounded-md shadow-sm mb-5" role="group">
                 <button type="button" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-s-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
                   For information
@@ -91,47 +91,56 @@
                 }
                 
                 <div>
-                    <button type="button" (click)="addAssignment()" class="text-white bg-[#3c77bd] hover:bg-[rgb(51, 101, 161)] focus:ring-4 focus:ring-blue-300 font-medium rounded-md text-sm px-5 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add</button>
+                    <button type="button" (click)="addAssignment()" class="text-white bg-[#3c77bd] hover:bg-[rgb(51, 101, 161)] focus:ring-4 focus:ring-blue-300 font-medium rounded-[4px] text-sm px-4 py-1.5  me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add</button>
                 </div>
               </div>
         </div>
         @if(assignmentList.length){
-            <div class="basis-1/3">
+            <div class="basis-1/3 overflow-y-auto" style="max-height: 80vh;">
                 @for(assignment of assignmentList;track assignment; let idx = $index){
                     <div class="bg-white p-4 border rounded-lg border-gray-200 mb-5">
                         <div class="flex justify-between items-center mb-4">
-                            <h3 class="text-lg font-medium">{{assignment}}</h3>
-                            <button (click)="delete(idx)">x</button>                    
-                          </div>
+                          <h3 class="text-lg font-medium">{{assignment}}</h3>
+                          <button (click)="delete(idx)">x</button>                    
+                        </div>
                           
-                          <div class="space-y-4">
-                            <div class="flex">
-                              <label class="text-sm w-1/5 text-gray-500">To:</label>
-                              <div class="flex flex-wrap gap-2 mt-1 w-4/5">
-                                <div class="tag-container">
-                                    <span class="tag">OOSTERBAAN Karlijn (AD-department)</span>
-                                    <span class="tag">Nifhod Bern</span>
-                                    <span class="tag">Jill Lorem Ipsum</span>        
-                                  </div>
-                              </div>
-                            </div>        
-                            <div class="flex">
-                              <label class="text-sm text-gray-500 w-1/5">Comment:</label>
-                              <p class=" w-4/5">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
-                            </div>        
-                            <div class="flex">
-                              <label class="text-sm text-gray-500 w-1/5">Due date:</label>
-                              <p class=" w-4/5">13/10/2023</p>
+                        <div class="space-y-4">
+                          <div class="flex">
+                            <label class="text-sm w-1/5 text-gray-500">To:</label>
+                            <div class="flex flex-wrap gap-2 mt-1 w-4/5">
+                              <div class="tag-container">
+                                  <span class="tag">OOSTERBAAN Karlijn (AD-department)</span>
+                                  <span class="tag">Nifhod Bern</span>
+                                  <span class="tag">Jill Lorem Ipsum</span>        
+                                </div>
                             </div>
-                    
-                            <button class="p-0 h-auto text-blue-600">
-                              Show advance data
-                            </button>
+                          </div>        
+                          <div class="flex">
+                            <label class="text-sm text-gray-500 w-1/5">Comment:</label>
+                            <p class=" w-4/5">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
+                          </div>        
+                          <div class="flex">
+                            <label class="text-sm text-gray-500 w-1/5">Due date:</label>
+                            <p class=" w-4/5">13/10/2023</p>
                           </div>
+                  
+                          <button class="p-0 h-auto text-blue-600">
+                            Show advance data
+                          </button>
+                        </div>
                     </div>
                 }        
             </div>
         }
         
     </div>
-</div>
+
+    
+  </div>
+  <footer class="absolute border-t w-full left-0 py-3  px-6 bottom-0 bg-white">
+    <div class="flex w-full justify-end">
+      <button class="text-[#3c77bd] bg-[#d8e4f2] hover:bg-[rgb(51, 101, 161)] focus:ring-4 focus:ring-blue-300 font-medium rounded-[4px] text-sm px-4 py-1.5 me-2  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Save temporary</button>
+      <button class="text-white bg-[#3c77bd] hover:bg-[rgb(51, 101, 161)] focus:ring-4 focus:ring-blue-300 font-medium rounded-[4px] text-sm px-4 py-1.5 me-2  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Send</button>
+    </div>
+  </footer>
+
