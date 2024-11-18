@@ -67,7 +67,7 @@ section.content-section >h2,section.content-section >h3{
 }
 
 .widgets-column {
-  width: 500px;
+  width: 35%;
   background-color: #f8f9fa;
   padding: 15px;
   border-radius: 8px;
@@ -90,23 +90,6 @@ section.content-section >h2,section.content-section >h3{
 }
 .widget hr{
   margin: 1em 0;
-}
-.widget .tag-container{
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  align-items: center;
-}
-
-.widget .tag-container .tag{    
-  padding: 0.3em 1em;
-  border: 1px solid #3c77bd;
-  color: #305f97;
-  font-size: 12.8px;
-}
-.widget .tag-container svg{
-  color: #305f97;
 }
 
 .task-summary{

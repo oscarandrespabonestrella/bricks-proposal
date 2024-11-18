@@ -4,9 +4,9 @@
       <h3>Create</h3>
       <div class="grid-container">
         <button *ngFor="let item of createButtons" class="grid-button">
+          <i [class]="'bi-alarm'"></i>
           <span class="material-icons">{{ item.icon }}</span>
-          <h3>{{ item.title }}</h3>
-          <p>{{ item.description }}</p>
+          <h3>{{ item.title }}</h3>          
         </button>
       </div>
     </section>
@@ -15,8 +15,7 @@
       <div class="grid-container">
         <button *ngFor="let item of taskButtons" class="grid-button">
           <span class="material-icons">{{ item.icon }}</span>
-          <h3>{{ item.title }}</h3>
-          <p>{{ item.description }}</p>
+          <h3>{{ item.title }}</h3>          
         </button>
       </div>
     </section>
@@ -25,8 +24,7 @@
       <div class="grid-container">
         <button *ngFor="let item of documentsButtons" class="grid-button">
           <span class="material-icons">{{ item.icon }}</span>
-          <h3>{{ item.title }}</h3>
-          <p>{{ item.description }}</p>
+          <h3>{{ item.title }}</h3>          
         </button>
       </div>
     </section>
@@ -107,8 +105,21 @@
     </div>
     <div class="widget">
       <h4>Marking groups</h4>
-      <p>You are a member of 2 marking groups</p>
-      
+      <p>You are a member of 2 marking groups</p>      
+    </div>
+    <div class="widget">
+      <div class="grid w-full grid-cols-2 gap-2 rounded-xl bg-gray-200 p-2">
+        <div>
+            <input type="radio" name="option" id="1" value="1" class="peer hidden" checked />
+            <label for="1" class="block cursor-pointer select-none rounded-xl p-2 text-center peer-checked:bg-blue-500 peer-checked:font-bold peer-checked:text-white text-xs">Documents</label>
+        </div>
+
+        <div>
+            <input type="radio" name="option" id="2" value="2" class="peer hidden" />
+            <label for="2" class="block cursor-pointer select-none rounded- p-2 text-center peer-checked:bg-blue-500 peer-checked:font-bold peer-checked:text-white text-xs">Workflows</label>
+        </div>
+       
+    </div>
     </div>
     
   </div>

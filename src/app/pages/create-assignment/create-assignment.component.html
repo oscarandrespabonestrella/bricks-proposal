@@ -1,0 +1,137 @@
+<div class="h-screen overflow-auto"> 
+    <div class="flex justify-between items-center mb-9 px-10">
+        <h2 class="text-xl font-semibold">Create assignments</h2>    
+    </div>
+    <div class="flex flex-row px-10 gap-7">
+        <div class="w-full bg-white p-5 border-gray-200  border rounded-lg h-fit" [ngClass]="{'basis-2/3': assignmentList.length}">
+            <div class="inline-flex rounded-md shadow-sm mb-5" role="group">
+                <button type="button" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-s-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
+                  For information
+                </button>
+                <button type="button" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
+                  For follow-up
+                </button>
+                <button type="button" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-e-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
+                  For opinion
+                </button>
+              </div>
+            <div class="space-y-4">
+                <div class="flex items-center ">
+                  <span class="text-sm font-light w-1/5">Send to</span>
+                  <div class="flex items-center gap-2">
+                    <label class="inline-flex items-center cursor-pointer">
+                        <input type="checkbox" value="" class="sr-only peer">
+                        <span class=" text-sm font-light text-gray-900 dark:text-gray-300 me-3">Performer</span>
+                        <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                        <span class="ms-3 text-sm font-light text-gray-900 dark:text-gray-300">Services</span>
+                    </label>                
+                  </div>
+                </div>
+        
+                <div class="flex items-center">
+                  <label class="text-sm font-light w-1/5">
+                    To <span class="text-red-500">*</span>
+                  </label>
+                  <div class="mt-1 w-4/5">
+                    <input  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                  </div>
+                  <div class="mt-2 flex flex-wrap gap-2">
+                    
+                  </div>
+                </div>
+        
+                <div class="flex ">
+                  <label class="text-sm font-light  w-1/5">Comment</label>
+                  <div class="mt-1  w-4/5">
+                    <textarea 
+                      placeholder="Type a comment"
+                      rows="3"
+                      class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    ></textarea>
+                  </div>
+                </div>
+        
+                <div class="flex items-center">
+                  <label class="text-sm font-light w-1/5">Due date</label>
+                  <div class="mt-1 w-4/5">                
+                      <input  type="date" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date">
+                  </div>
+                </div>
+               
+                
+                @if(showAdvInfo){
+                    <div class="space-y-4 mb-5 block">
+                        <div class="flex items-center gap-2">
+                          <div class="flex items-center w-1/4">
+                              <input id="link-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                              <label for="link-checkbox" class="ms-2 text-sm font-light text-gray-900 dark:text-gray-300">Automatic launch on</label>
+                          </div>
+                                        
+                          <input  type="date" class="w-2/4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date">
+                         
+                          <div class="flex items-center w-1/3">
+                              <input id="link-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                              <label for="link-checkbox" class="ms-2 text-sm font-light text-gray-900 dark:text-gray-300">Send notification when launching</label>
+                          </div>
+                        </div>    
+                      
+              
+                        <div class="flex items-center gap-2">
+                          <div class="flex items-center w-2/3">
+                              <input id="link-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                              <label for="link-checkbox" class="ms-2 text-sm font-light text-gray-900 dark:text-gray-300">Send notification when workflow is not ended by.</label>
+                          </div>                
+                          <input  type="date" class="w-1/3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date">
+                        </div>
+                      </div>
+                }@else{
+                    <div class="text-right">
+                        <button class="font-medium text-sm text-blue-600 dark:text-blue-500 hover:underline" (click)="toggleAdvInfo()">Show advance info</button>
+                    </div>
+                }
+                
+                <div>
+                    <button type="button" (click)="addAssignment()" class="text-white bg-[#3c77bd] hover:bg-[rgb(51, 101, 161)] focus:ring-4 focus:ring-blue-300 font-medium rounded-md text-sm px-5 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add</button>
+                </div>
+              </div>
+        </div>
+        @if(assignmentList.length){
+            <div class="basis-1/3">
+                @for(assignment of assignmentList;track assignment; let idx = $index){
+                    <div class="bg-white p-4 border rounded-lg border-gray-200 mb-5">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-lg font-medium">{{assignment}}</h3>
+                            <button (click)="delete(idx)">x</button>                    
+                          </div>
+                          
+                          <div class="space-y-4">
+                            <div class="flex">
+                              <label class="text-sm w-1/5 text-gray-500">To:</label>
+                              <div class="flex flex-wrap gap-2 mt-1 w-4/5">
+                                <div class="tag-container">
+                                    <span class="tag">OOSTERBAAN Karlijn (AD-department)</span>
+                                    <span class="tag">Nifhod Bern</span>
+                                    <span class="tag">Jill Lorem Ipsum</span>        
+                                  </div>
+                              </div>
+                            </div>        
+                            <div class="flex">
+                              <label class="text-sm text-gray-500 w-1/5">Comment:</label>
+                              <p class=" w-4/5">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
+                            </div>        
+                            <div class="flex">
+                              <label class="text-sm text-gray-500 w-1/5">Due date:</label>
+                              <p class=" w-4/5">13/10/2023</p>
+                            </div>
+                    
+                            <button class="p-0 h-auto text-blue-600">
+                              Show advance data
+                            </button>
+                          </div>
+                    </div>
+                }        
+            </div>
+        }
+        
+    </div>
+</div>

@@ -176,7 +176,7 @@ import { DropdownTriggerForDirective } from '../dropdown/dropdown-trigger-for.di
     `
     .navbar {
       height: 56px;
-      background: white;
+      background: rgb(248, 249, 250);
       border-bottom: 1px solid #ddd;
       display: flex;
       align-items: center;
@@ -222,10 +222,10 @@ import { DropdownTriggerForDirective } from '../dropdown/dropdown-trigger-for.di
       color: #333;
     }
 
-    .brand {
-      font-weight: 600;
-      font-size: 18px;
-      color: #1976d2;
+    .brand {      
+      font-size: 20.8px;
+      font-weight: 500;
+      color: rgb(60, 119, 189);
     }
 
     .search-box {
@@ -286,7 +286,8 @@ import { DropdownTriggerForDirective } from '../dropdown/dropdown-trigger-for.di
       align-items:center;
       display: flex;
       gap: 12px;
-      font-size: 1em;      
+      font-size: 14.72px;
+      font-weight: 400;
     }
     
     .navbar-nav .nav-item .nav-link svg {
