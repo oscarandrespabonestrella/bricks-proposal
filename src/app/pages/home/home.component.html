@@ -3,8 +3,7 @@
     <section class="content-section">
       <h3>Create</h3>
       <div class="grid-container">
-        <button *ngFor="let item of createButtons" class="grid-button">
-          <i [class]="'bi-alarm'"></i>
+        <button *ngFor="let item of createButtons" class="grid-button">          
           <span class="material-icons">{{ item.icon }}</span>
           <h3>{{ item.title }}</h3>          
         </button>
