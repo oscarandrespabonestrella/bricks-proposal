@@ -12,7 +12,7 @@ import { MultiSelectComponent } from '../../components/multi-select/multi-select
 })
 export class CreateAssignmentComponent {
   showAdvInfo = false;
-  assigmentType = "forInfo";
+  assigmentType = "For information";
   private readonly options: string[] = ['For information', 'For follow-up', 'For opinion'];
   private readonly recipients: {key: string, recipients: string[]}[] = [
     {
@@ -39,7 +39,7 @@ export class CreateAssignmentComponent {
   addAssignment(){
     const randomIndex = Math.floor(Math.random() * this.options.length);
     const recipientIndex = this.sendToControl.value ? 1: 0;
-    this.assignmentList.push({type: this.options[randomIndex], recipients: this.recipients[recipientIndex]});
+    this.assignmentList.push({type: this.assigmentType, recipients: this.recipients[recipientIndex]});
   }
   delete(index: number){    
     this.assignmentList.splice(index,1)
