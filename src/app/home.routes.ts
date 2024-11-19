@@ -2,6 +2,8 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { CreateDocumentComponent } from './pages/create-document/create-document.component';
 import { CreateAssignmentComponent } from './pages/create-assignment/create-assignment.component';
+import { InboxComponent } from './pages/inbox/inbox.component';
+import { TaskDetailComponent } from './pages/task-detail/task-detail.component';
 
 export const HOME_ROUTES: Routes = [
   {
@@ -16,6 +18,14 @@ export const HOME_ROUTES: Routes = [
   {
     path: 'create-document',
     component: CreateDocumentComponent,
+  },
+  {
+    path: 'inbox',
+    component: InboxComponent,
+  },
+  {
+    path: 'task-detail',
+    component: TaskDetailComponent,
   },
   {
     path: 'create-assignment',

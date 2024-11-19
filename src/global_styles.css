@@ -4,6 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    font-family:"Roboto", sans-serif;
+  }
+}
 /* Reset and base styles */
 * {
   margin: 0;
@@ -43,11 +48,11 @@ a {
 
 /* Utility classes */
 .text-primary {
-  color: #1976d2;
+  color: #3c77bd;
 }
 
 .bg-primary {
-  background-color: #1976d2;
+  background-color: #3c77bd;
 }
 
 .text-gray {
@@ -296,3 +301,27 @@ svg.chevron-icon {
   font-size: 0.875rem;
   color: #6b7280;
 }
+
+/*
+ *  STYLE 4
+ */
+
+ ::-webkit-scrollbar-track
+ {
+   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.03);
+   background-color: #F5F5F5;
+ }
+ 
+ ::-webkit-scrollbar
+ {
+   width: 10px;
+   background-color: #F5F5F5;
+ }
+ 
+ ::-webkit-scrollbar-thumb
+ {
+   background-color: #f8f9fa;
+   border: 2px solid #e6e7e7;
+ }
+ 
+ 

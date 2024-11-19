@@ -73,7 +73,7 @@ import { DropdownTriggerForDirective } from '../dropdown/dropdown-trigger-for.di
       
       </div>
       <div class="navbar-end">
-        <div class="search-box">
+        <div class="search-box md:w-1/3">
             <input type="text" placeholder="Search, e.g. by reference number" />
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <circle cx="11" cy="11" r="8"></circle>
