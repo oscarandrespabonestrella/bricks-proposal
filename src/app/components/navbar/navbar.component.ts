@@ -13,6 +13,7 @@ import { DropdownTriggerForDirective } from '../dropdown/dropdown-trigger-for.di
     RouterModule,
     DropdownComponent,
     DropdownTriggerForDirective,
+    RouterModule
   ],
   template: `
     <nav class="navbar">
@@ -32,7 +33,7 @@ import { DropdownTriggerForDirective } from '../dropdown/dropdown-trigger-for.di
 
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a href="#" class="nav-link active">
+            <a [routerLink]="['']" class="nav-link active">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
                     <polyline points="9 22 9 12 15 12 15 22"/>
@@ -41,27 +42,27 @@ import { DropdownTriggerForDirective } from '../dropdown/dropdown-trigger-for.di
           </li>
           
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a [routerLink]="['']" class="nav-link">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                       <path d="M22 12h-6l-2 3h-4l-2-3H2"/>
                       <path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/>
                     </svg>My inbox</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a [routerLink]="['']" class="nav-link">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                       <path d="M12 20h9"/>
                       <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
                     </svg>My follow-up</a>
           </li>
           <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a [routerLink]="['']" class="nav-link">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                       <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
                     </svg>My folders</a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a [routerLink]="['']" class="nav-link">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                       <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
                       <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
@@ -96,8 +97,8 @@ import { DropdownTriggerForDirective } from '../dropdown/dropdown-trigger-for.di
                   NB
                 </div>
                 <div class="profile-info">
-                  <div class="profile-name">NIJHOF Bernd</div>
-                  <div class="profile-email">Bernd.NIJHOFamexiogrou...</div>
+                  <div class="profile-name">GONZALEZ PEREIRA MARTINS Jose Luís</div>
+                  <div class="profile-email">gonzales.Pereira...</div>
                 </div>
               </button>
               <div class="menu-section">
