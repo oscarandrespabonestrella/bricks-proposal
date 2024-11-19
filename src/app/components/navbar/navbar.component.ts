@@ -81,9 +81,12 @@ import { DropdownTriggerForDirective } from '../dropdown/dropdown-trigger-for.di
             </svg>
           </div>
           <a class="create-btn" [routerLink]="['/create-document']">Create</a>
-          <div class="profile" [dropdownTriggerFor]="dropdown">
-            <h6 class="text-sm font-semibold">NIJHOF Bernd</h6>
-            <p class="text-xs"> (AD-department)</p>
+          <div class="profile text-right flex gap-2 items-center" [dropdownTriggerFor]="dropdown">
+            <div>              
+              <h6 class="text-sm font-semibold">GONZALEZ PEREIRA MARTINS Jose Luís </h6>
+              <p class="text-xs"> (EXPO - DIR COMMITTEES)</p>
+            </div>
+            <i class="bi bi-caret-down-fill"></i>
           </div>
           
           <my-dropdown #dropdown>

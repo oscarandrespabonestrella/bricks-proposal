@@ -136,7 +136,7 @@ h1,h1,h3,h4,h5{
 .search-box {
   position: relative;
   width: 100%;
-  max-width: 500px;
+  max-width: 450px;
   margin-right: 14px;
 }
 
@@ -175,8 +175,7 @@ h1,h1,h3,h4,h5{
   gap: 8px;
 }
 .navbar-nav{      
-  padding: 0.5rem 0;
-  font-weight: ;
+  padding: 0.5rem 0;  
   color: var(--bs-navbar-color);      
   display: flex;
   flex-direction: row;
