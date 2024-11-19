@@ -1,11 +1,10 @@
 <div class="document-form">
 <form [formGroup]="documentForm" (ngSubmit)="onSubmit()">
   <!-- Document Details Section -->
-  <section class="section">
-    <h2 class="section-title">Document Details</h2>
+  <section class="section">    
     <div class="form-group">
       <label for="documentTitle">Document title *</label>
-      <input id="documentTitle" type="text" formControlName="documentTitle" class="form-control">
+      <input id="documentTitle" type="text" formControlName="documentTitle" class="border-[#f8f9fa] bg-[#f8f9fa] rounded w-full text-sm py-1.5 px-2">
     </div>
 
     <div class="form-row">

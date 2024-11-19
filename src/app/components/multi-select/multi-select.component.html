@@ -1,0 +1,61 @@
+<div class="relative w-full">
+    <button
+      class="w-full border border-[#f8f9fa] bg-[#f8f9fa]  rounded p-2 flex items-center justify-between bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+      (click)="toggleDropdown()"
+    >   
+    <div class="tag-container">
+
+        @for(selectedOption of selectedOptions;track selectedOption){
+            <span class="tag">{{selectedOption}}</span>
+        }@empty{
+            <span class="text-gray-700">
+                Select options
+            </span>
+        }
+    </div>
+      
+      <svg
+        class="w-5 h-5 text-gray-500"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M19 9l-7 7-7-7"
+        />
+      </svg>
+    </button>
+  
+    <div
+      *ngIf="isDropdownOpen"
+      class="absolute mt-2 w-full border border-gray-300 bg-white rounded-md shadow-lg z-10"
+    >
+      <ul class="max-h-48 overflow-y-auto">
+        <li
+          *ngFor="let option of options"
+          (click)="toggleSelection(option)"
+          class="px-4 py-2 hover:bg-indigo-100 cursor-pointer flex items-center"
+        >
+          <input
+            type="checkbox"
+            [checked]="isSelected(option)"
+            class="mr-2 accent-indigo-500"
+          />
+          <span>{{ option }}</span>
+        </li>
+      </ul>
+      <div class="p-2 text-center border-t">
+        <button
+          class="text-sm text-red-500 hover:text-red-700"
+          (click)="clearSelection()"
+        >
+          Clear All
+        </button>
+      </div>
+    </div>
+  </div>
+  

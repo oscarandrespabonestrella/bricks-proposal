@@ -1,5 +1,14 @@
-<div class="overflow-auto relative "  style="height: 88vh;">     
-    <div class="flex justify-between items-center mb-9 px-10">
+<div class="flex flex-col border-b px-16 py-8">
+  <h1 class="text-xl flex gap-1 items-center ">
+    <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" style="width:var(--ng-icon__size, 1em);height:var(--ng-icon__size, 1em)"><path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"></path><path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"></path></svg>
+    Acknowledgment of receipt outgoing from to anonymous
+  </h1>
+  <p class="text-sm">DG2 AMPLEXOR(2024)002481</p>
+  <p><strong>Sender: </strong> YUSEINOV Soner Bahtinur (EXPO - POLICY DEPT EXPO)</p>
+  <p><strong>To: </strong>MEANEY Damian (EXPO - ASIA / AUSTRALIA)</p>
+</div>
+<div class="overflow-auto relative px-8 py-6"  style="height: 76vh;">     
+    <div class="flex justify-between items-center mb-6 px-10">
         <h2 class="text-xl font-semibold">Create assignments</h2>    
     </div>
     <div class="flex flex-row px-10 gap-7" >
@@ -20,25 +29,45 @@
                   <span class="text-sm font-light w-1/5">Send to</span>
                   <div class="flex items-center gap-2">
                     <label class="inline-flex items-center cursor-pointer">
-                        <input type="checkbox" value="" class="sr-only peer">
+                        <input type="checkbox" [formControl]="sendToControl" class="sr-only peer">
                         <span class=" text-sm font-light text-gray-900 dark:text-gray-300 me-3">Performer</span>
                         <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
                         <span class="ms-3 text-sm font-light text-gray-900 dark:text-gray-300">Services</span>
                     </label>                
                   </div>
                 </div>
-        
-                <div class="flex items-center">
-                  <label class="text-sm font-light w-1/5">
-                    To <span class="text-red-500">*</span>
-                  </label>
-                  <div class="mt-1 w-4/5">
-                    <input  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                @if(sendToControl.value){
+                  <div class="flex items-center">
+                    <label class="text-sm font-light w-1/5">
+                      Services: <span class="text-red-500">*</span>
+                    </label>
+                    <div class="mt-1 w-4/5">
+                      <multi-select [options]="[
+                        'EXPO - DIR COMMITTEES',
+                        'EXPO - POLICY DEPT EXPO',
+                        'EXPO - DIR REGIONS',
+                        'EXPO - ASIA / AUSTRALIA',
+                        'FINS - DIR BUDGET/FINANCES',
+                        'FINS - DIR POLITIC STRUCT FINANC',                        
+                        'FINS - BUDGET UNIT']"></multi-select>                     
+                    </div>
+                    <div class="mt-2 flex flex-wrap gap-2">
+                      
+                    </div>
                   </div>
-                  <div class="mt-2 flex flex-wrap gap-2">
-                    
+                }@else{
+                  <div class="flex items-center">
+                    <label class="text-sm font-light w-1/5">
+                      To <span class="text-red-500">*</span>
+                    </label>
+                    <div class="mt-1 w-4/5">
+                      <input  class="border-[#f8f9fa] bg-[#f8f9fa] border  p-2 rounded w-full" />
+                    </div>
+                    <div class="mt-2 flex flex-wrap gap-2">
+                      
+                    </div>
                   </div>
-                </div>
+                }
         
                 <div class="flex ">
                   <label class="text-sm font-light  w-1/5">Comment</label>
@@ -46,15 +75,14 @@
                     <textarea 
                       placeholder="Type a comment"
                       rows="3"
-                      class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    ></textarea>
+                      class="block p-2.5 w-full text-sm text-gray-900 border-[#f8f9fa] bg-[#f8f9fa] rounded border focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"                    ></textarea>
                   </div>
                 </div>
         
                 <div class="flex items-center">
                   <label class="text-sm font-light w-1/5">Due date</label>
                   <div class="mt-1 w-4/5">                
-                      <input  type="date" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date">
+                      <input  type="date" class="border-[#f8f9fa] bg-[#f8f9fa] rounded border text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date">
                   </div>
                 </div>
                
@@ -67,7 +95,7 @@
                               <label for="link-checkbox" class="ms-2 text-sm font-light text-gray-900 dark:text-gray-300">Automatic launch on</label>
                           </div>
                                         
-                          <input  type="date" class="w-2/4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date">
+                          <input  type="date" class="w-2/4 border-[#f8f9fa] bg-[#f8f9fa] rounded border text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date">
                          
                           <div class="flex items-center w-1/3">
                               <input id="link-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
@@ -81,7 +109,7 @@
                               <input id="link-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                               <label for="link-checkbox" class="ms-2 text-sm font-light text-gray-900 dark:text-gray-300">Send notification when workflow is not ended by.</label>
                           </div>                
-                          <input  type="date" class="w-1/3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date">
+                          <input  type="date" class="w-1/3 border-[#f8f9fa] bg-[#f8f9fa] rounded border  text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date">
                         </div>
                       </div>
                 }@else{
@@ -96,22 +124,22 @@
               </div>
         </div>
         @if(assignmentList.length){
-            <div class="basis-1/3 overflow-y-auto" style="max-height: 80vh;">
-                @for(assignment of assignmentList;track assignment; let idx = $index){
+            <div class="basis-1/3 overflow-y-auto" style="max-height: 60vh;">
+                @for(assignment of assignmentList;track assignment.type; let idx = $index){
                     <div class="bg-white p-4 border rounded-lg border-gray-200 mb-5">
                         <div class="flex justify-between items-center mb-4">
-                          <h3 class="text-lg font-medium">{{assignment}}</h3>
+                          <h3 class="text-lg font-medium">{{assignment.type}}</h3>
                           <button (click)="delete(idx)">x</button>                    
                         </div>
                           
                         <div class="space-y-4">
                           <div class="flex">
-                            <label class="text-sm w-1/5 text-gray-500">To:</label>
+                            <label class="text-sm w-1/5 text-gray-500">{{assignment.recipients.key}}:</label>
                             <div class="flex flex-wrap gap-2 mt-1 w-4/5">
                               <div class="tag-container">
-                                  <span class="tag">OOSTERBAAN Karlijn (AD-department)</span>
-                                  <span class="tag">Nifhod Bern</span>
-                                  <span class="tag">Jill Lorem Ipsum</span>        
+                                @for(recipient of assignment.recipients.recipients; track recipient){
+                                  <span class="tag">{{recipient}}</span>
+                                }                                  
                                 </div>
                             </div>
                           </div>        
@@ -139,7 +167,7 @@
   </div>
   <footer class="absolute border-t w-full left-0 py-3  px-6 bottom-0 bg-white">
     <div class="flex w-full justify-end">
-      <button class="text-[#3c77bd] bg-[#d8e4f2] hover:bg-[rgb(51, 101, 161)] focus:ring-4 focus:ring-blue-300 font-medium rounded-[4px] text-sm px-4 py-1.5 me-2  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Save temporary</button>
+      
       <button class="text-white bg-[#3c77bd] hover:bg-[rgb(51, 101, 161)] focus:ring-4 focus:ring-blue-300 font-medium rounded-[4px] text-sm px-4 py-1.5 me-2  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Send</button>
     </div>
   </footer>

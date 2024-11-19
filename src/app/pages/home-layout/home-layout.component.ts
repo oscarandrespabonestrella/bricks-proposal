@@ -19,8 +19,7 @@ import { SharedService } from '../../core/shared.service';
 
     .main-content {
       margin-left: 0;
-      margin-top: 56px;
-      padding: 24px;
+      margin-top: 56px;      
       transition: margin-left 0.3s ease;
     }
 

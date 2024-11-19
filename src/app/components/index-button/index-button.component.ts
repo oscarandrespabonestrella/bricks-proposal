@@ -5,9 +5,19 @@ import { Component, Input } from '@angular/core';
   standalone: true,
   imports: [],
   template: `
-  <button class="px-8 py-0.5  border-2 border-black dark:border-white uppercase bg-white text-black transition duration-200 text-sm shadow-[1px_1px_rgba(0,0,0),2px_2px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4px_rgba(0,0,0),5px_5px_0px_0px_rgba(0,0,0)] dark:shadow-[1px_1px_rgba(255,255,255),2px_2px_rgba(255,255,255),3px_3px_rgba(255,255,255),4px_4px_rgba(255,255,255),5px_5px_0px_0px_rgba(255,255,255)] ">
-    <ng-content></ng-content>
-  </button>
+  
+  <button
+  class="text-xl w-36 h-full rounded bg-white text-[#3399ff] relative overflow-hidden group z-10 hover:text-white duration-1000 py-7"
+>
+  <span
+    class="absolute bg-[#6db6ff] w-40 h-48 rounded-full group-hover:scale-100 scale-0 -z-10 -left-2 -top-10 group-hover:duration-500 duration-700 origin-center transform transition-all"
+  ></span>
+  <span
+    class="absolute bg-[#3399ff] w-40 h-48 -left-2 -top-10 rounded-full group-hover:scale-100 scale-0 -z-10 group-hover:duration-700 duration-500 origin-center transform transition-all"
+  ></span>
+  <ng-content></ng-content>
+</button>
+
   `,
   styles: ``
 })
