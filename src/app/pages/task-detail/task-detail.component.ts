@@ -3,10 +3,11 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { BadgeComponent } from '../../components/badge/badge.component';
 import data from "./task-list.json";
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({  
   standalone: true,
-  imports: [BadgeComponent, ReactiveFormsModule],
+  imports: [BadgeComponent, ReactiveFormsModule, NgOptimizedImage],
   providers:[],
   
   templateUrl: './task-detail.component.html',
@@ -14,8 +15,7 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 })
 export class TaskDetailComponent implements OnInit{
   showTaskList = false;
-  taskList = (data.tasklist as unknown as Array<{[key:string]: unknown}>).slice(0, 20)
-  .map(x => ({name: x['name'], type: x['type']}));
+  taskList = (data.tasklist as unknown as Array<{[key:string]: string}>).slice(0, 20);
 
   searchControlInput: FormControl = new FormControl("");
   $searchInput = toSignal(this.searchControlInput.valueChanges, {initialValue: ""})
