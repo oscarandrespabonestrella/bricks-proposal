@@ -4,6 +4,7 @@ import { CreateDocumentComponent } from './pages/create-document/create-document
 import { CreateAssignmentComponent } from './pages/create-assignment/create-assignment.component';
 import { InboxComponent } from './pages/inbox/inbox.component';
 import { TaskDetailComponent } from './pages/task-detail/task-detail.component';
+import { DocumentDetailComponent } from './pages/document-detail/document-detail.component';
 
 export const HOME_ROUTES: Routes = [
   {
@@ -26,6 +27,10 @@ export const HOME_ROUTES: Routes = [
   {
     path: 'task-detail',
     component: TaskDetailComponent,
+  },
+  {
+    path: 'document-detail',
+    component: DocumentDetailComponent,
   },
   {
     path: 'create-assignment',

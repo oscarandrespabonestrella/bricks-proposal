@@ -11,6 +11,10 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class MultiSelectComponent {
   @Input() options: string[] = [];
   @Output() selectionChange = new EventEmitter<string[]>();
+  @Input() placeHolder: string = "Select options";
+
+  
+
 
   selectedOptions: string[] = [];
   isDropdownOpen = false;
