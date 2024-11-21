@@ -1,6 +1,280 @@
-<div class="document-form">
+<div class="flex w-full mb-3 py-3 px-7 border-b">
+  <h1 class="font-medium">
+    <i class="bi bi-box-arrow-in-right mr-2"></i>CREATE INCOMING DOCUMENT
+  </h1>
+</div>
+<div class="flex w-full">
+  <div class="flex border-b w-full px-8 py-7 flex-col">
+    <div class="w-full flex items-center mb-2">
+      <label
+        for="hs-inline-leading-select-label"
+        class="block text-sm font-normal flex w-1/12"
+        >Document title <span class="text-red-400">*</span></label
+      >
+      <div class="relative flex w-11/12">
+        <input
+          type="text"
+          id="hs-inline-leading-select-label"
+          name="inline-add-on"
+          class="py-2 px-4 text-xs ps-72 block w-full border-[#f8f9fa] bg-[#f8f9fa] rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+        />
+        <div
+          class="absolute inset-y-0 start-1 flex items-center text-gray-500 ps-px"
+        >
+          <select
+            id="hs-inline-leading-select-country"
+            name="hs-inline-leading-select-country"
+            class="block w-full border-transparent text-xs border-[#f8f9fa] bg-[#f8f9fa] focus-visible:border-transparent focus:border-transparent focus-within:border-transparent"
+          >
+            @for(type of documentTypes;track type.key){
+            <option [value]="type.key">{{ type.value }}</option>
+            }
+          </select>
+        </div>
+        <button class="text-[#3c77bd] px-3 p-2" (click)="toggleDisplayTitle()">
+          <i
+            class="bi bi-eye-slash"
+            [ngClass]="{
+              'bi-eye-slash': showDisplayTitleInput,
+              'bi-eye': !showDisplayTitleInput
+            }"
+          ></i>
+        </button>
+      </div>
+    </div>
+    @if(showDisplayTitleInput){
+    <div class="w-full flex items-center mb-2">
+      <label
+        for="hs-inline-leading-select-label"
+        class="block text-sm font-normal flex w-1/12"
+        >Display title
+      </label>
+      <div class="relative flex w-11/12">
+        <input
+          type="text"
+          id="hs-inline-leading-select-label"
+          name="inline-add-on"
+          class="py-2 px-4 text-xs block w-full border-[#f8f9fa] bg-[#f8f9fa] rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+        />
+      </div>
+    </div>
+    }
+    <div class="w-full flex items-center mb-2 gap-5">
+      <div class="flex w-11/12 items-center">
+        <label
+          for="hs-inline-leading-select-label"
+          class="block text-xs font-normal flex w-[10.6rem]"
+          >From <span class="text-red-400">*</span></label
+        >
+        <div class="relative flex w-full">
+          <input
+            type="text"
+            id="hs-inline-leading-select-label"
+            name="inline-add-on"
+            class="py-2 px-4 ps-72 block w-full border-[#f8f9fa] bg-[#f8f9fa] rounded-lg text-xs focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+          />
+          <div
+            class="absolute inset-y-0 start-1 flex items-center text-gray-500 ps-px"
+          >
+            <button
+              class="bg-[#d8e4f2] text-[#3c77bd] rounded px-3 py-[2px] text-sm"
+            >
+              +
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="flex w-1/12">
+        <div class="flex items-center w-full justify-center">
+          <input
+            id="link-checkbox"
+            type="checkbox"
+            value=""
+            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+          />
+          <label
+            for="link-checkbox"
+            class="ms-2 text-sm font-light text-gray-900 dark:text-gray-300"
+            >Anonymous</label
+          >
+        </div>
+      </div>
+    </div>
+    <div class="w-full flex items-center mb-2">
+      <label
+        for="hs-inline-leading-select-label"
+        class="block text-xs font-normal flex w-1/12"
+        >To <span class="text-red-400">*</span></label
+      >
+      <div class="relative flex w-11/12">
+        <input
+          type="text"
+          id="hs-inline-leading-select-label"
+          name="inline-add-on"
+          class="py-2 px-4 ps-72 block w-full border-[#f8f9fa] bg-[#f8f9fa] rounded-lg text-xs focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+        />
+        <div
+          class="absolute inset-y-0 start-1 flex items-center text-gray-500 ps-px"
+        >
+          <button
+            class="bg-[#d8e4f2] text-[#3c77bd] rounded px-3 py-[2px] text-sm"
+          >
+            +
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="w-full flex items-center mb-2">
+      <label
+        for="hs-inline-leading-select-label"
+        class="text-xs font-normal flex w-1/12"
+        >CC
+      </label>
+      <div class="relative flex w-11/12">
+        <input
+          type="text"
+          id="hs-inline-leading-select-label"
+          name="inline-add-on"
+          class="py-2 px-4 ps-72 block w-full border-[#f8f9fa] bg-[#f8f9fa] rounded-lg text-xs focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+        />
+        <div
+          class="absolute inset-y-0 start-1 flex items-center text-gray-500 ps-px"
+        >
+          <button
+            class="bg-[#d8e4f2] text-[#3c77bd] rounded px-3 py-[2px] text-sm"
+          >
+            +
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="w-full flex items-center mb-2 gap-5">
+      <div class="flex w-8/12 items-center">
+        <label
+          for="hs-inline-leading-select-label"
+          class="block text-xs font-normal flex w-44"
+          >Document location <span class="text-red-400">*</span>
+        </label>
+        <div class="relative flex w-full">
+          <button
+            class="py-1 px-4 block w-full border-[#f8f9fa] text-xs border-b text-left text-[#3c77bd]"
+          >
+            + Select document location
+          </button>
+        </div>
+      </div>
+      <div class="flex w-3/12 items-center">
+        <label
+          for="hs-inline-leading-select-label"
+          class="block text-xs font-normal mr-5 w-fit text-nowrap"
+          >Document date
+        </label>
+        <input
+          type="date"
+          class="border-[#f8f9fa] bg-[#f8f9fa] w-full rounded border text-gray-900 text-xs focus:ring-blue-500 focus:border-blue-500 block p-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          placeholder="Select date"
+        />
+      </div>
+      <div class="flex w-1/12 items-center justify-end">
+        <label
+          for="Toggle3"
+          class="inline-flex items-center rounded-md cursor-pointer text-xs border"
+        >
+          <input
+            id="Toggle3"
+            type="checkbox"
+            class="hidden peer"
+            [formControl]="formatControl"
+          />
+          <span
+            class="px-4 py-2 rounded-l-md text-[#3c77bd]"
+            [ngClass]="{
+              'bg-[#3c77bd]': formatControl.value,
+              'text-white': formatControl.value
+            }"
+            >Paper</span
+          >
+          <span
+            class="px-4 py-2 rounded-r-md text-[#3c77bd]"
+            [ngClass]="{
+              'bg-[#3c77bd]': !formatControl.value,
+              'text-white': !formatControl.value
+            }"
+            >Digital</span
+          >
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="flex border-b w-full px-7 py-8 flex-wrap">
+  <div class="flex-w-full">
+    <h2 class="font-medium mb-2">Files</h2>
+  </div>
+  <div class="flex w-full gap-5">
+    <div class="flex w-full flex-col" [ngClass]="{ 'w-5/12': showFiles }">
+      <div
+        class="w-full m-x-auto flex items-center justify-center border border-dashed bg-[#f8f9fa] border-[#d9d9d9] h-44 text-[#3c77bd] cursor-pointer"
+        (click)="toggleFiles()"
+      >
+        <div class="flex flex-col justify-center items-center">
+          <i class="bi bi-upload mb-2 text-[2rem]"></i>
+          <p class="text-sm">
+            Drag files to this area to upload or browse in the computer
+          </p>
+        </div>
+      </div>
+    </div>
+    @if(showFiles){
+    <div class="flex w-7/12 flex-col">
+      @for(file of files; track file){
+      <div class="flex w-full rounded-lg border items-center p-1.5 mb-2">
+        <div class="flex w-1/2 gap-5">
+          <div class="text-sm flex w-full">
+            <i class="bi text-lg mr-1" [class]="file.icon"></i>
+            <input
+              [value]="file.name"
+              type="text"
+              class="py-2 px-4 text-xs block w-full border-[#f8f9fa] bg-[#f8f9fa] rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+            />
+          </div>
+        </div>
+        <div class="flex w-1/2 gap-5 justify-end">
+          <select
+            class="border border-[#f8f9fa] bg-[#f8f9fa] rounded py-1 px-2 text-xs h-fit"
+            id=""
+          >
+            <option value="">Main Element</option>
+            <option value="">Annex</option>
+            <option value="">SG accord</option>
+            <option value="">Translation</option>
+          </select>
+
+          <label class="inline-flex items-center cursor-pointer text-xs">
+            <input type="checkbox" value="" class="sr-only peer" checked />
+            <div
+              class="relative w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
+            ></div>
+            <span
+              class="ms-3 text-xs font-medium text-gray-900 dark:text-gray-300"
+              >Public</span
+            >
+          </label>
+
+          <button class="px-1 text-[#3c77bd]">
+            <i class="bi bi-trash"></i>
+          </button>
+        </div>
+      </div>
+      }
+    </div>
+    }
+  </div>
+</div>
+
+<!-- <div class="document-form">
 <form [formGroup]="documentForm" (ngSubmit)="onSubmit()">
-  <!-- Document Details Section -->
+  
   <section class="section">    
     <div class="form-group">
       <label for="documentTitle">Document title *</label>
@@ -37,7 +311,7 @@
     </div>
   </section>
 
-  <!-- Restrictions Section -->
+  
   <section class="section">
     <h2 class="section-title">Restrictions</h2>
     <div class="form-row">
@@ -61,7 +335,7 @@
     </div>
   </section>
 
-  <!-- Recipients Section -->
+  
   <section class="section">
     <h2 class="section-title">Recipients</h2>
     <div class="form-row">
@@ -82,7 +356,7 @@
     </div>
   </section>
 
-  <!-- Files Section -->
+
   <section class="section">
     <h2 class="section-title">Files</h2>
     <div class="file-upload-area">
@@ -93,7 +367,7 @@
     </div>
   </section>
 
-  <!-- Advanced Information -->
+
   <section class="section">
     <h2 class="section-title">Advanced Information</h2>
     <div class="form-row">
@@ -113,11 +387,11 @@
     </div>
   </section>
 
-  <!-- Form Actions -->
+
   <div class="form-actions">
     <button type="button" class="btn btn-secondary" (click)="onCancel()">Cancel</button>
     <button type="button" class="btn btn-secondary" (click)="onSaveTemporarily()">Save temporarily</button>
     <button type="submit" class="btn btn-primary" [disabled]="!documentForm.valid">Register document</button>
   </div>
 </form>
-</div>
+</div> -->

@@ -1,0 +1,83 @@
+{
+  "documentTypes": [
+    { "key": "Letter", "value": "Letter" },
+    {
+      "key": "Acknowledgment of receipt",
+      "value": "Acknowledgment of receipt"
+    },
+    { "key": "Agenda", "value": "Agenda" },
+    { "key": "Annual report", "value": "Annual report" },
+    { "key": "Annual work programme", "value": "Annual work programme" },
+    { "key": "Appointment", "value": "Appointment" },
+    { "key": "Approval", "value": "Approval" },
+    { "key": "Authorisation", "value": "Authorisation" },
+    { "key": "Bureau decision", "value": "Bureau decision" },
+    { "key": "Bureau notice to Members", "value": "Bureau notice to Members" },
+    {
+      "key": "Call for expression of interest",
+      "value": "Call for expression of interest"
+    },
+    { "key": "CCC recommendation", "value": "CCC recommendation" },
+    { "key": "Certificate", "value": "Certificate" },
+    { "key": "Comments", "value": "Comments" },
+    { "key": "Communication", "value": "Communication" },
+    { "key": "Complaint", "value": "Complaint" },
+    { "key": "Considerations", "value": "Considerations" },
+    { "key": "Contribution", "value": "Contribution" },
+    { "key": "Cover note", "value": "Cover note" },
+    { "key": "Decision", "value": "Decision" },
+    { "key": "Decision of delegation", "value": "Decision of delegation" },
+    {
+      "key": "Decision of subdelegation",
+      "value": "Decision of subdelegation"
+    },
+    {
+      "key": "Decision of temporary delegation",
+      "value": "Decision of temporary delegation"
+    },
+    {
+      "key": "Decision of temporary subdelegation",
+      "value": "Decision of temporary subdelegation"
+    },
+    {
+      "key": "Declaration of financial interest",
+      "value": "Declaration of financial interest"
+    },
+    { "key": "Declaration of gifts", "value": "Declaration of gifts" },
+    {
+      "key": "Declaration of invitation by third parties",
+      "value": "Declaration of invitation by third parties"
+    },
+    { "key": "Follow-up", "value": "Follow-up" },
+    { "key": "Invitation", "value": "Invitation" },
+    { "key": "Legal advice", "value": "Legal advice" },
+    { "key": "Letter of information", "value": "Letter of information" },
+    { "key": "Mandate", "value": "Mandate" },
+    { "key": "Meeting request", "value": "Meeting request" },
+    { "key": "Minutes", "value": "Minutes" },
+    { "key": "Motion for resolution", "value": "Motion for resolution" },
+    { "key": "Nomination", "value": "Nomination" },
+    { "key": "Note", "value": "Note" },
+    { "key": "Note for the file", "value": "Note for the file" },
+    { "key": "Note to the Chair", "value": "Note to the Chair" },
+    { "key": "Notice to Members", "value": "Notice to Members" },
+    { "key": "Notification", "value": "Notification" },
+    { "key": "Observations", "value": "Observations" },
+    { "key": "Official transmission", "value": "Official transmission" },
+    { "key": "Open letter", "value": "Open letter" },
+    { "key": "Opinion", "value": "Opinion" },
+    { "key": "Planning", "value": "Planning" },
+    { "key": "Programme", "value": "Programme" },
+    { "key": "Proposal", "value": "Proposal" },
+    { "key": "Quaestors communication", "value": "Quaestors communication" },
+    { "key": "Refusal", "value": "Refusal" },
+    { "key": "Report", "value": "Report" },
+    { "key": "Request", "value": "Request" },
+    {
+      "key": "Request for authorisation",
+      "value": "Request for authorisation"
+    },
+    { "key": "Request for information", "value": "Request for information" },
+    { "key": "Transmission", "value": "Transmission" }
+  ]
+}
