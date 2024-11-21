@@ -19,10 +19,10 @@ import { BadgeComponent } from "../../components/badge/badge.component";
 export class CreateDocumentComponent implements OnInit {
   documentForm: FormGroup;
   documentTypes = data.documentTypes;
+  languages = data.languages;
   showDisplayTitleInput = false;
   showFiles = false;
   formats = ["Digital", "Paper"];
-  languages = ["English", "Spanish", "French", "German"];
   formatControl: FormControl = new FormControl(false);
   internalControl: FormControl = new FormControl(false);
   limitedControl: FormControl = new FormControl(false);
