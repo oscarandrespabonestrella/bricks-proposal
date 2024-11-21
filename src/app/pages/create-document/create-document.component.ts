@@ -24,6 +24,10 @@ export class CreateDocumentComponent implements OnInit {
   formats = ["Digital", "Paper"];
   languages = ["English", "Spanish", "French", "German"];
   formatControl: FormControl = new FormControl(false);
+  internalControl: FormControl = new FormControl(false);
+  limitedControl: FormControl = new FormControl(false);
+  personalControl: FormControl = new FormControl(false);
+  transparencyControl: FormControl = new FormControl(false);
 
   constructor(private fb: FormBuilder) {
     this.documentForm = this.fb.group({
