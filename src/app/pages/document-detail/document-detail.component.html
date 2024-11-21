@@ -23,7 +23,7 @@
                 <i class="bi bi-box-arrow-in-right mr-3"></i>
                 Rest Test Unregistered 2024-11-11_01
             </h1> 
-            <div class="flex flex-row items-center">
+            <div class="flex flex-row items-center mb-2">
                 <p class="text-sm ml-1 mr-4">DG2 AMPLEXOR(2024)004813</p>
                 <badge bg="#f1ecf9" textColor="#58339c">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" style="width:var(--ng-icon__size, 1em);height:var(--ng-icon__size, 1em)"><path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"></path><path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"></path></svg>
@@ -34,6 +34,16 @@
                     For approval
                 </badge>
             </div>
+            <div class="flex">
+                <div class="flex  items-center mr-3">
+                    <label class="text-sm font-medium mr-2 ">Created by</label>
+                    <p class="text-sm text-nowrap">GONZALEZ PEREIRA MARTINS Jose Luís (EXPO - DIR COMMITTEES)</p>
+                </div>
+                <div class="flex items-center">
+                    <label class="text-sm font-medium mr-2 ">Registered by</label>
+                    <p class="text-sm text-nowrap">L'HUILLIER Fabienne (EXPO - DIR REGIONS)</p>
+                </div>     
+            </div>
         </div>            
         <div class="flex w-1/2 gap-3 justify-end items-end">
             <button class="bg-[#d8e4f2] text-[#3c77bd] h-fit rounded px-4 py-2 text-xs">Create reply</button>
@@ -42,7 +52,7 @@
             <button class="px-1 py-1 text-lg" ><i class="bi bi-calendar4 h-fit"></i></button>
         </div>
     </div>
-    <div class="flex w-full h-[76.5vh]">
+    <div class="flex w-full h-[74.5vh]">
         <div class="flex flex-col w-3/4 px-9 py-8 overflow-y-auto max-h-[74vh]">
             <div class="flex w-full flex-col ">
                 <div class="flex w-full mb-2">
@@ -146,15 +156,15 @@
                 
             </div>
         </div>
-        <div class="flex flex-col w-1/4 bg-[#f8f9fa] h-full p-5">                
-            <div class="flex w-full pb-5 pt-0 border-b text-sm">
+        <div class="flex flex-col w-1/4 bg-[#f8f9fa] h-full p-5">   
+            <div class="flex w-full py-5 border-b text-sm">
                 <div class="w-1/3">
                     <p>Public register</p>
                 </div>
                 <div class="w-2/3">
                     <p>No</p>
                 </div>
-            </div>
+            </div>             
             <div class="flex w-full py-5 border-b flex-wrap text-sm">
                 <div class="w-1/3">
                     <p>Sender</p>
@@ -180,14 +190,57 @@
         <div              
             class="fixed inset-y-0 right-0 z-10 flex-shrink-0 w-96 bg-white border-r-2 border-indigo-100 shadow-lg sm:right-16  sm:w-72 lg:static lg:w-96"
         >
-            <div class="flex w-full mb-3">
+            <div class="flex flex-col w-full mb-3">
                 <div class="flex border-b justify-between w-full items-center pl-5">
                     <h2 class="font-medium text-lg">Information</h2>
                     <button class="p-2 pr-5" (click)="toggleInfoSidebar()">x</button>
                 </div>
+                <div class="flex border-b flex-col w-full p-5">
+                    <div class="flex w-full flex-col mb-2">
+                        <label class="text-xs text-gray-500">Document title</label>
+                        <p class="text-sm text-nowrap">Rest Test Unregistered 2024-11-11_01</p>
+                    </div>
+                    <div class="flex w-full flex-col mb-2">
+                        <label class="text-xs text-gray-500">Display title</label>
+                        <p class="text-sm text-nowrap">Rest Test Unregistered </p>
+                    </div>
+                    <div class="flex w-full flex-col mb-2">
+                        <label class="text-xs text-gray-500">Author</label>
+                        <p class="text-sm text-nowrap">DO CARMO DIAS Alberto (FINS - DIR BUDGET/FINANCES)</p>
+                    </div>
+                    <div class="flex w-full flex-col mb-2">
+                        <label class="text-xs text-gray-500">Main language</label>
+                        <p class="text-sm text-nowrap">English</p>
+                    </div>
+                </div>
                 
-            </div>
-            <div class="flex flex-col"></div>
+                <div class="flex border-b flex-col w-full p-5">
+                    <div class="flex w-full flex-col mb-2">
+                        <label class="text-xs text-gray-500">From </label>
+                        <p class="text-sm text-nowrap">DO CARMO DIAS Alberto (FINS - DIR BUDGET/FINANCES)</p>
+                    </div>
+                    <div class="flex w-full flex-col mb-2">
+                        <label class="text-xs text-gray-500">To</label>
+                        <p class="text-sm text-nowrap">PAPACHRISTOPOULOU Georgios (FINS - BUDGET UNIT)</p>
+                    </div>                  
+                </div>
+                <div class="flex border-b flex-col w-full p-5">
+                    <div class="flex w-full flex-col mb-2">
+                        <label class="text-xs text-gray-500">Marking </label>
+                        <p class="text-sm text-nowrap">Unrestricted</p>
+                    </div>
+                    <div class="flex w-full flex-col mb-2">
+                        <label class="text-xs text-gray-500">Personal</label>
+                        <p class="text-sm text-nowrap">Not personal</p>
+                    </div> 
+                    <div class="flex w-full flex-col mb-2">
+                        <label class="text-xs text-gray-500">Transparency</label>
+                        <p class="text-sm text-nowrap">No</p>
+                    </div>                  
+                </div>
+                
+            </div>          
+              
         </div>    
     </div>
 }
