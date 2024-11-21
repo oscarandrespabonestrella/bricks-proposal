@@ -28,6 +28,7 @@ export class CreateDocumentComponent implements OnInit {
   limitedControl: FormControl = new FormControl(false);
   personalControl: FormControl = new FormControl(false);
   transparencyControl: FormControl = new FormControl(false);
+  draftingControl: FormControl = new FormControl(false);
 
   constructor(private fb: FormBuilder) {
     this.documentForm = this.fb.group({

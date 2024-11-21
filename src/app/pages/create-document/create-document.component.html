@@ -409,28 +409,28 @@
       <div class="flex flex-col">
         <label class="mb-1 text-xs">Drafting mode:</label>
         <label
-          for="Toggle9"
+          for="Toggle10"
           class="inline-flex items-center rounded-md cursor-pointer text-xs border"
         >
           <input
-            id="Toggle9"
+            id="Toggle10"
             type="checkbox"
             class="hidden peer"
-            [formControl]="limitedControl"
+            [formControl]="draftingControl"
           />
           <span
             class="px-4 py-1 rounded-l-md text-[#3c77bd]"
             [ngClass]="{
-              'bg-[#adb5bd]': !limitedControl.value,
-              'text-white': !limitedControl.value
+              'bg-[#adb5bd]': !draftingControl.value,
+              'text-white': !draftingControl.value
             }"
             >Unrestricted</span
           >
           <span
             class="px-4 py-1 rounded-r-md text-[#3c77bd]"
             [ngClass]="{
-              'bg-[#3c77bd]': limitedControl.value,
-              'text-white': limitedControl.value
+              'bg-[#3c77bd]': draftingControl.value,
+              'text-white': draftingControl.value
             }"
             >Restricted</span
           >
