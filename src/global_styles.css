@@ -7,6 +7,7 @@
 @layer base {
   html {
     font-family:"Roboto", sans-serif;
+    background: #f1f5f9;
   }
 }
 /* Reset and base styles */
@@ -86,7 +87,7 @@ h1,h1,h3,h4,h5{
 
 .navbar {
   height: 56px;
-  background: rgb(248, 249, 250);
+  background: White;
   border-bottom: 1px solid #ddd;
   display: flex;
   align-items: center;
@@ -211,8 +212,7 @@ h1,h1,h3,h4,h5{
   position: relative;
   margin-top: 0.5rem;
   width: 100%;
-  background-color: white;      
-  
+  background-color: white;        
   overflow: hidden;
 }
 

@@ -1,77 +1,113 @@
-<div class="flex w-full mb-3 py-3 px-7 border-b">
-  <h1 class="font-medium">
-    <i class="bi bi-box-arrow-in-right mr-2"></i>CREATE INCOMING DOCUMENT
-  </h1>
-</div>
-<div class="flex w-full">
-  <div class="flex border-b w-full px-8 py-3 flex-col">
-    <div class="w-full flex items-center mb-2">
-      <label
-        for="hs-inline-leading-select-label"
-        class="block text-sm font-normal flex w-1/12"
-        >Document title <span class="text-red-400">*</span></label
-      >
-      <div class="relative flex w-11/12">
-        <input
-          type="text"
-          id="hs-inline-leading-select-label"
-          name="inline-add-on"
-          class="py-2 px-4 text-xs ps-72 block w-full border-[#f8f9fa] bg-[#f8f9fa] rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-        />
-        <div
-          class="absolute inset-y-0 start-1 flex items-center text-gray-500 ps-px"
-        >
-          <select
-            id="hs-inline-leading-select-country"
-            name="hs-inline-leading-select-country"
-            class="block w-full border-transparent text-xs border-[#f8f9fa] bg-[#f8f9fa] focus-visible:border-transparent focus:border-transparent focus-within:border-transparent"
-          >
-            @for(type of documentTypes;track type.key){
-            <option [value]="type.key">{{ type.value }}</option>
-            }
-          </select>
-        </div>
-        <button class="text-[#3c77bd] px-3 p-2" (click)="toggleDisplayTitle()">
-          <i
-            class="bi bi-eye-slash"
-            [ngClass]="{
-              'bi-eye-slash': showDisplayTitleInput,
-              'bi-eye': !showDisplayTitleInput
-            }"
-          ></i>
-        </button>
-      </div>
-    </div>
-    @if(showDisplayTitleInput){
-    <div class="w-full flex items-center mb-2">
-      <label
-        for="hs-inline-leading-select-label"
-        class="block text-sm font-normal flex w-1/12"
-        >Display title
-      </label>
-      <div class="relative flex w-11/12">
-        <input
-          type="text"
-          id="hs-inline-leading-select-label"
-          name="inline-add-on"
-          class="py-2 px-4 text-xs block w-full border-[#f8f9fa] bg-[#f8f9fa] rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-        />
-      </div>
-    </div>
-    }
-    <div class="w-full flex items-center mb-2 gap-5">
-      <div class="flex w-11/12 items-center">
+<div class="flex flex-col flex-full p-4">
+  <div class="flex w-full p-3 rounded-lg mb-3 bg-white shadow-md">
+    <div class="flex w-full px-8 py-3 flex-col">
+      <h1 class="font-medium mb-3">
+        <i class="bi bi-box-arrow-in-right mr-2"></i>CREATE INCOMING DOCUMENT
+      </h1>
+      <div class="w-full flex items-center mb-2">
         <label
           for="hs-inline-leading-select-label"
-          class="text-xs font-normal flex w-[10.6rem]"
-          >From <span class="text-red-400">*</span></label
+          class="block text-sm font-normal flex w-1/12"
+          >Document title <span class="text-red-400">*</span></label
         >
-        <div class="relative flex w-full">
+        <div class="relative flex w-11/12">
+          <input
+            type="text"
+            class="py-2 px-4 text-xs ps-72 block w-full border border-[#e3e3e3] bg-[#f8f9fa] rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+          />
+          <div
+            class="absolute inset-y-0 start-1 flex items-center text-gray-500 ps-px"
+          >
+            <select
+              class="block w-full text-xs bg-[#f8f9fa] focus-visible:border-transparent focus:border-transparent focus-within:border-transparent"
+            >
+              @for(type of documentTypes;track type.key){
+              <option [value]="type.key">{{ type.value }}</option>
+              }
+            </select>
+          </div>
+          <button
+            class="text-[#3c77bd] px-3 p-2"
+            (click)="toggleDisplayTitle()"
+          >
+            <i
+              class="bi bi-eye-slash"
+              [ngClass]="{
+                'bi-eye-slash': showDisplayTitleInput,
+                'bi-eye': !showDisplayTitleInput
+              }"
+            ></i>
+          </button>
+        </div>
+      </div>
+      @if(showDisplayTitleInput){
+      <div class="w-full flex items-center mb-2">
+        <label
+          for="hs-inline-leading-select-label"
+          class="text-sm font-normal flex w-1/12"
+          >Display title
+        </label>
+        <div class="relative flex w-11/12">
           <input
             type="text"
             id="hs-inline-leading-select-label"
             name="inline-add-on"
-            class="py-2 px-4 ps-72 block w-full border-[#f8f9fa] bg-[#f8f9fa] rounded-lg text-xs focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+            class="py-2 px-4 text-xs block w-full border border-[#e3e3e3] bg-[#f8f9fa] rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+          />
+        </div>
+      </div>
+      }
+      <div class="w-full flex items-center mb-2">
+        <label class="text-xs font-normal flex w-1/12"
+          >From <span class="text-red-400">*</span></label
+        >
+        <div class="flex w-10/12 items-center relative">
+          <div class="relative flex w-full">
+            <input
+              type="text"
+              id="hs-inline-leading-select-label"
+              name="inline-add-on"
+              class="py-2 px-4 ps-72 block w-full border border-[#e3e3e3] bg-[#f8f9fa] rounded-lg text-xs focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+            />
+            <div
+              class="absolute inset-y-0 start-1 flex items-center text-gray-500 ps-px"
+            >
+              <button
+                class="bg-[#d8e4f2] text-[#3c77bd] rounded px-3 py-[2px] text-sm"
+              >
+                +
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="flex w-1/12">
+          <div class="flex items-center w-full justify-center">
+            <input
+              id="link-checkbox"
+              type="checkbox"
+              value=""
+              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+            />
+            <label
+              for="link-checkbox"
+              class="ms-2 text-sm font-light text-gray-900 dark:text-gray-300"
+              >Anonymous</label
+            >
+          </div>
+        </div>
+      </div>
+      <div class="w-full flex items-center mb-2">
+        <label
+          for="hs-inline-leading-select-label"
+          class="block text-xs font-normal flex w-1/12"
+          >To <span class="text-red-400">*</span></label
+        >
+        <div class="relative flex w-11/12">
+          <input
+            type="text"
+            id="hs-inline-leading-select-label"
+            name="inline-add-on"
+            class="py-2 px-4 ps-72 block w-full border border-[#e3e3e3] bg-[#f8f9fa] rounded-lg text-xs focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
           />
           <div
             class="absolute inset-y-0 start-1 flex items-center text-gray-500 ps-px"
@@ -84,669 +120,512 @@
           </div>
         </div>
       </div>
-      <div class="flex w-1/12">
-        <div class="flex items-center w-full justify-center">
-          <input
-            id="link-checkbox"
-            type="checkbox"
-            value=""
-            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-          />
-          <label
-            for="link-checkbox"
-            class="ms-2 text-sm font-light text-gray-900 dark:text-gray-300"
-            >Anonymous</label
-          >
-        </div>
-      </div>
-    </div>
-    <div class="w-full flex items-center mb-2">
-      <label
-        for="hs-inline-leading-select-label"
-        class="block text-xs font-normal flex w-1/12"
-        >To <span class="text-red-400">*</span></label
-      >
-      <div class="relative flex w-11/12">
-        <input
-          type="text"
-          id="hs-inline-leading-select-label"
-          name="inline-add-on"
-          class="py-2 px-4 ps-72 block w-full border-[#f8f9fa] bg-[#f8f9fa] rounded-lg text-xs focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-        />
-        <div
-          class="absolute inset-y-0 start-1 flex items-center text-gray-500 ps-px"
-        >
-          <button
-            class="bg-[#d8e4f2] text-[#3c77bd] rounded px-3 py-[2px] text-sm"
-          >
-            +
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="w-full flex items-center mb-2">
-      <label
-        for="hs-inline-leading-select-label"
-        class="text-xs font-normal flex w-1/12"
-        >CC
-      </label>
-      <div class="relative flex w-11/12">
-        <input
-          type="text"
-          id="hs-inline-leading-select-label"
-          name="inline-add-on"
-          class="py-2 px-4 ps-72 block w-full border-[#f8f9fa] bg-[#f8f9fa] rounded-lg text-xs focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-        />
-        <div
-          class="absolute inset-y-0 start-1 flex items-center text-gray-500 ps-px"
-        >
-          <button
-            class="bg-[#d8e4f2] text-[#3c77bd] rounded px-3 py-[2px] text-sm"
-          >
-            +
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="w-full flex items-center mb-2">
-      <div class="flex w-8/12 items-center pe-5">
-        <label class="text-xs font-normal flex w-[11.6rem]"
-          >Document location <span class="text-red-400">*</span>
-        </label>
-        <div class="relative flex w-full">
-          <button
-            class="py-1 px-4 block w-full border-[#f8f9fa] text-xs border-b text-left text-[#3c77bd]"
-          >
-            + Select document location
-          </button>
-        </div>
-      </div>
-      <div class="flex w-3/12 items-center">
-        <label class="block text-xs font-normal ps-1 mr-5 w-fit text-nowrap"
-          >Document date
-        </label>
-        <input
-          type="date"
-          class="border-[#f8f9fa] bg-[#f8f9fa] w-full rounded border text-gray-900 text-xs focus:ring-blue-500 focus:border-blue-500 block p-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          placeholder="Select date"
-        />
-      </div>
-      <div class="flex w-1/12 items-center justify-end">
-        <label
-          for="Toggle3"
-          class="inline-flex items-center rounded-md cursor-pointer text-xs border"
-        >
-          <input
-            id="Toggle3"
-            type="checkbox"
-            class="hidden peer"
-            [formControl]="formatControl"
-          />
-          <span
-            class="px-4 py-2 rounded-l-md text-[#3c77bd]"
-            [ngClass]="{
-              'bg-[#3c77bd]': formatControl.value,
-              'text-white': formatControl.value
-            }"
-            >Paper</span
-          >
-          <span
-            class="px-4 py-2 rounded-r-md text-[#3c77bd]"
-            [ngClass]="{
-              'bg-[#3c77bd]': !formatControl.value,
-              'text-white': !formatControl.value
-            }"
-            >Digital</span
-          >
-        </label>
-      </div>
-    </div>
-    <div class="flex w-full gap-5 mb-2">
-      <div class="flex w-8/12 items-center">
+      <div class="w-full flex items-center mb-2">
         <label
           for="hs-inline-leading-select-label"
-          class="text-xs font-normal flex w-[11rem]"
+          class="text-xs font-normal flex w-1/12"
+          >CC
+        </label>
+        <div class="relative flex w-11/12">
+          <input
+            type="text"
+            id="hs-inline-leading-select-label"
+            name="inline-add-on"
+            class="py-2 px-4 ps-72 block w-full border border-[#e3e3e3] bg-[#f8f9fa] rounded-lg text-xs focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+          />
+          <div
+            class="absolute inset-y-0 start-1 flex items-center text-gray-500 ps-px"
+          >
+            <button
+              class="bg-[#d8e4f2] text-[#3c77bd] rounded px-3 py-[2px] text-sm"
+            >
+              +
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="w-full flex items-center mb-2">
+        <label class="text-xs font-normal flex w-1/12"
+          >Document location <span class="text-red-400">*</span>
+        </label>
+        <div class="flex w-7/12 items-center pe-5">
+          <div class="relative flex w-full">
+            <button
+              class="py-1 px-4 block w-full border-[#f8f9fa] text-xs border-b text-left text-[#3c77bd]"
+            >
+              + Select document location
+            </button>
+          </div>
+        </div>
+        <div class="flex w-3/12 items-center">
+          <label class="block text-xs font-normal ps-5 mr-5 w-fit text-nowrap"
+            >Document date
+          </label>
+          <input
+            type="date"
+            class="py-1 border-[#e3e3e3] bg-[#f8f9fa] w-full rounded border text-gray-900 text-xs focus:ring-blue-500 focus:border-blue-500 block p-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Select date"
+          />
+        </div>
+        <div class="flex w-1/12 items-center justify-end">
+          <label
+            for="Toggle3"
+            class="inline-flex items-center rounded-md cursor-pointer text-xs border"
+          >
+            <input
+              id="Toggle3"
+              type="checkbox"
+              class="hidden peer"
+              [formControl]="formatControl"
+            />
+            <span
+              class="px-4 py-2 rounded-l-md text-[#3c77bd]"
+              [ngClass]="{
+                'bg-[#3c77bd]': formatControl.value,
+                'text-white': formatControl.value
+              }"
+              >Paper</span
+            >
+            <span
+              class="px-4 py-2 rounded-r-md text-[#3c77bd]"
+              [ngClass]="{
+                'bg-[#3c77bd]': !formatControl.value,
+                'text-white': !formatControl.value
+              }"
+              >Digital</span
+            >
+          </label>
+        </div>
+      </div>
+      <div class="flex w-full mb-2">
+        <label
+          for="hs-inline-leading-select-label"
+          class="text-xs font-normal flex w-1/12"
           >External reference
         </label>
-        <div class="relative flex w-full">
-          <input
-            type="text"
-            id="hs-inline-leading-select-label"
-            name="inline-add-on"
-            class="py-2 px-4 text-xs block w-full border-[#f8f9fa] bg-[#f8f9fa] rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-          />
-        </div>
-      </div>
-      <div class="flex w-4/12 items-center">
-        <label class="block text-xs font-normal mr-5 w-fit text-nowrap"
-          >Main language
-        </label>
-        <div class="relative flex w-full">
-          <select
-            placeHolder="Entity name"
-            class="border border-[#f8f9fa] bg-[#f8f9fa] rounded py-1 px-2 text-xs h-fit w-full"
-          >
-            <option value=""></option>
-            @for(language of languages;track language.key){
-            <option [value]="language.key">{{ language.value }}</option>
-            }
-          </select>
-        </div>
-      </div>
-    </div>
-    <div class="w-full flex items-center mb-2">
-      <label class="text-xs font-normal flex w-1/12"
-        >External content title
-      </label>
-      <div class="relative flex w-11/12">
-        <div class="flex w-full">
-          <input
-            type="text"
-            id="hs-inline-leading-select-label"
-            name="inline-add-on"
-            class="py-1 px-4 text-xs block w-full border-[#f8f9fa] bg-[#f8f9fa] rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-          />
-          <button class="text-[#3c77bd] px-3 py-1">
-            <i class="bi bi-plus-circle"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="flex border-b w-full px-7 py-4 flex-wrap">
-  <div class="flex-w-full">
-    <h2 class="font-medium mb-2">Files</h2>
-  </div>
-  <div class="flex w-full gap-5">
-    <div class="flex w-full flex-col" [ngClass]="{ 'w-5/12': showFiles }">
-      <div
-        class="w-full m-x-auto flex items-center justify-center border border-dashed bg-[#f8f9fa] border-[#d9d9d9] h-44 text-[#3c77bd] cursor-pointer"
-        (click)="toggleFiles()"
-      >
-        <div class="flex flex-col justify-center items-center">
-          <i class="bi bi-upload mb-2 text-[2rem]"></i>
-          <p class="text-sm">
-            Drag files to this area to upload or browse in the computer
-          </p>
-        </div>
-      </div>
-    </div>
-    @if(showFiles){
-    <div class="flex w-7/12 flex-col">
-      @for(file of files; track file){
-      <div class="flex w-full rounded-lg border items-center p-1.5 mb-2">
-        <div class="flex w-1/2 gap-5">
-          <div class="text-sm flex w-full">
-            <i class="bi text-lg mr-1" [class]="file.icon"></i>
+        <div class="flex w-7/12 items-center">
+          <div class="relative flex w-full">
             <input
-              [value]="file.name"
+              type="text"
+              id="hs-inline-leading-select-label"
+              name="inline-add-on"
+              class="py-2 px-4 text-xs block w-full border border-[#e3e3e3] bg-[#f8f9fa] rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+            />
+          </div>
+        </div>
+        <div class="flex w-4/12 items-center ps-5">
+          <label class="block text-xs font-normal mr-5 w-fit text-nowrap"
+            >Main language
+          </label>
+          <div class="relative flex w-full">
+            <select
+              placeHolder="Entity name"
+              class="border border-[#e3e3e3] bg-[#f8f9fa] rounded py-1 px-2 text-sm h-fit w-full"
+            >
+              <option value=""></option>
+              @for(language of languages;track language.key){
+              <option [value]="language.key">{{ language.value }}</option>
+              }
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="w-full flex items-center mb-2">
+        <label class="text-xs font-normal flex w-1/12"
+          >External content title
+        </label>
+        <div class="relative flex w-11/12">
+          <div class="flex w-full">
+            <input
+              type="text"
+              id="hs-inline-leading-select-label"
+              name="inline-add-on"
+              class="py-1 px-4 text-xs block w-full border border-[#e3e3e3] bg-[#f8f9fa] rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+            />
+            <button class="text-[#3c77bd] px-3 py-1">
+              <i class="bi bi-plus-circle"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="flex border-b w-full px-7 py-4 flex-wrap rounded-lg mb-3 bg-white shadow-md"
+  >
+    <div class="flex-w-full">
+      <h2 class="font-medium mb-2">Files</h2>
+    </div>
+    <div class="flex w-full gap-5">
+      <div class="flex w-full flex-col" [ngClass]="{ 'w-5/12': showFiles }">
+        <div
+          class="w-full m-x-auto flex items-center justify-center border border-dashed bg-[#f8f9fa] border-[#d9d9d9] h-44 text-[#3c77bd] cursor-pointer"
+          (click)="toggleFiles()"
+        >
+          <div class="flex flex-col justify-center items-center">
+            <i class="bi bi-upload mb-2 text-[2rem]"></i>
+            <p class="text-sm">
+              Drag files to this area to upload or browse in the computer
+            </p>
+          </div>
+        </div>
+      </div>
+      @if(showFiles){
+      <div class="flex w-7/12 flex-col">
+        @for(file of files; track file){
+        <div class="flex w-full rounded-lg border items-center p-1.5 mb-2">
+          <div class="flex w-1/2 gap-5">
+            <div class="text-sm flex w-full">
+              <i class="bi text-lg mr-1" [class]="file.icon"></i>
+              <input
+                [value]="file.name"
+                type="text"
+                class="py-2 px-4 text-xs block w-full border-[#f8f9fa] bg-[#f8f9fa] rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+              />
+            </div>
+          </div>
+          <div class="flex w-1/2 gap-5 justify-end">
+            <select
+              class="border border-[#f8f9fa] bg-[#f8f9fa] rounded py-1 px-2 text-xs h-fit"
+              id=""
+            >
+              <option value="">Main Element</option>
+              <option value="">Annex</option>
+              <option value="">SG accord</option>
+              <option value="">Translation</option>
+            </select>
+
+            <label class="inline-flex items-center cursor-pointer text-xs">
+              <input type="checkbox" value="" class="sr-only peer" checked />
+              <div
+                class="relative w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
+              ></div>
+              <span
+                class="ms-3 text-xs font-medium text-gray-900 dark:text-gray-300"
+                >Public</span
+              >
+            </label>
+
+            <button class="px-1 text-[#3c77bd]">
+              <i class="bi bi-trash"></i>
+            </button>
+          </div>
+        </div>
+        }
+      </div>
+      }
+    </div>
+  </div>
+  <div class="flex w-full">
+    <div
+      class="flex w-1/2 flex-col ps-7 py-6 pe-6 mr-1 rounded-lg mb-3 bg-white shadow-md"
+    >
+      <h2 class="font-medium mb-2">Restrictions</h2>
+      <div class="flex w-full">
+        <div class="w-full flex items-center mb-2">
+          <label
+            for="hs-inline-leading-select-label"
+            class="block text-sm font-normal flex w-1/5"
+            >Marking
+          </label>
+          <div class="relative flex w-4/5">
+            <input
+              type="text"
+              id="hs-inline-leading-select-label"
+              name="inline-add-on"
+              class="py-2 px-4 text-xs block w-full border-[#f8f9fa] bg-[#f8f9fa] rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="flex w-full mb-1">
+        <div class="w-full flex items-center mb-2">
+          <label
+            for="hs-inline-leading-select-label"
+            class="block text-sm font-normal flex w-1/5"
+            >Internal
+          </label>
+
+          <div class="relative flex w-4/5">
+            <div class="w-2/12">
+              <label
+                for="Toggle4"
+                class="inline-flex items-center rounded-md cursor-pointer text-xs border"
+              >
+                <input
+                  id="Toggle4"
+                  type="checkbox"
+                  class="hidden peer"
+                  [formControl]="internalControl"
+                />
+                <span
+                  class="px-4 py-1 rounded-l-md text-[#3c77bd]"
+                  [ngClass]="{
+                    'bg-[#3c77bd]': internalControl.value,
+                    'text-white': internalControl.value
+                  }"
+                  >Yes</span
+                >
+                <span
+                  class="px-4 py-1 rounded-r-md text-[#3c77bd]"
+                  [ngClass]="{
+                    'bg-[#adb5bd]': !internalControl.value,
+                    'text-white': !internalControl.value
+                  }"
+                  >No</span
+                >
+              </label>
+            </div>
+            <div class="w-10/12">
+              <select
+                [disabled]="!internalControl.value"
+                placeHolder="Entity name"
+                class="border border-[#f8f9fa] bg-[#f8f9fa] rounded py-1 px-2 text-xs h-fit w-full"
+              >
+                <option value="">Entity name</option>
+                <option value="staff matters">Staff Matters</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex w-full mb-1">
+        <div class="w-full flex items-center mb-2">
+          <label
+            for="hs-inline-leading-select-label"
+            class="block text-sm font-normal flex w-1/5"
+            >Embargo until
+          </label>
+          <div class="relative flex w-4/5">
+            <input
+              type="date"
+              class="border-[#f8f9fa] bg-[#f8f9fa] w-full rounded border text-gray-900 text-xs focus:ring-blue-500 focus:border-blue-500 block p-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Select date"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="flex w-full gap-5">
+        <div class="flex flex-col">
+          <label class="mb-1 text-xs">Drafting mode:</label>
+          <label
+            for="Toggle10"
+            class="inline-flex items-center rounded-md cursor-pointer text-xs border"
+          >
+            <input
+              id="Toggle10"
+              type="checkbox"
+              class="hidden peer"
+              [formControl]="draftingControl"
+            />
+            <span
+              class="px-4 py-1 rounded-l-md text-[#3c77bd]"
+              [ngClass]="{
+                'bg-[#adb5bd]': !draftingControl.value,
+                'text-white': !draftingControl.value
+              }"
+              >Unrestricted</span
+            >
+            <span
+              class="px-4 py-1 rounded-r-md text-[#3c77bd]"
+              [ngClass]="{
+                'bg-[#3c77bd]': draftingControl.value,
+                'text-white': draftingControl.value
+              }"
+              >Restricted</span
+            >
+          </label>
+        </div>
+        <div class="flex flex-col">
+          <label class="mb-1 text-xs">Limited:</label>
+          <label
+            for="Toggle5"
+            class="inline-flex items-center rounded-md cursor-pointer text-xs border"
+          >
+            <input
+              id="Toggle5"
+              type="checkbox"
+              class="hidden peer"
+              [formControl]="limitedControl"
+            />
+            <span
+              class="px-4 py-1 rounded-l-md text-[#3c77bd]"
+              [ngClass]="{
+                'bg-[#adb5bd]': !limitedControl.value,
+                'text-white': !limitedControl.value
+              }"
+              >Unlimited</span
+            >
+            <span
+              class="px-4 py-1 rounded-r-md text-[#3c77bd]"
+              [ngClass]="{
+                'bg-[#3c77bd]': limitedControl.value,
+                'text-white': limitedControl.value
+              }"
+              >Limited</span
+            >
+          </label>
+        </div>
+        <div class="flex flex-col">
+          <label class="mb-1 text-xs">Personal:</label>
+          <label
+            for="Toggle6"
+            class="inline-flex items-center rounded-md cursor-pointer text-xs border"
+          >
+            <input
+              id="Toggle6"
+              type="checkbox"
+              class="hidden peer"
+              [formControl]="personalControl"
+            />
+            <span
+              class="px-4 py-1 rounded-l-md text-[#3c77bd]"
+              [ngClass]="{
+                'bg-[#adb5bd]': !personalControl.value,
+                'text-white': !personalControl.value
+              }"
+              >Not personal</span
+            >
+            <span
+              class="px-4 py-1 rounded-r-md text-[#3c77bd]"
+              [ngClass]="{
+                'bg-[#3c77bd]': personalControl.value,
+                'text-white': personalControl.value
+              }"
+              >Personal</span
+            >
+          </label>
+        </div>
+        <div class="flex flex-col">
+          <label class="mb-1 text-xs">Transparency:</label>
+          <label
+            for="Toggle7"
+            class="inline-flex items-center rounded-md cursor-pointer text-xs border"
+          >
+            <input
+              id="Toggle7"
+              type="checkbox"
+              class="hidden peer"
+              [formControl]="transparencyControl"
+            />
+            <span
+              class="px-4 py-1 rounded-l-md text-[#3c77bd]"
+              [ngClass]="{
+                'bg-[#adb5bd]': !transparencyControl.value,
+                'text-white': !transparencyControl.value
+              }"
+              >No</span
+            >
+            <span
+              class="px-4 py-1 rounded-r-md text-[#3c77bd]"
+              [ngClass]="{
+                'bg-[#3c77bd]': transparencyControl.value,
+                'text-white': transparencyControl.value
+              }"
+              >Yes</span
+            >
+          </label>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex w-1/2 py-4 ps-6 ms-1 flex-col rounded-lg mb-3 bg-white shadow-md"
+    >
+      <h2 class="font-medium mb-2">Aditional information</h2>
+      <div class="flex w-full">
+        <div class="w-full flex items-center mb-2">
+          <label class="text-sm font-normal flex w-1/5 items-center"
+            >Registration place
+          </label>
+          <div class="relative flex w-4/5">
+            <select
+              placeHolder="Entity name"
+              class="border border-[#f8f9fa] bg-[#f8f9fa] rounded py-1.5 px-2 text-xs h-fit w-full"
+            >
+              <option value=""></option>
+              <option value="Brussels">Brussels</option>
+              <option value="Luxembourg">Luxembourg</option>
+              <option value="Strasbourg">Strasbourg</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="flex w-full">
+        <div class="w-full flex items-center mb-2">
+          <label class="text-sm font-normal flex w-1/5 items-center"
+            >Type of delivery
+          </label>
+          <div class="relative flex w-4/5">
+            <select
+              placeHolder="Entity name"
+              class="border border-[#f8f9fa] bg-[#f8f9fa] rounded py-1.5 px-2 text-xs h-fit w-full"
+            >
+              <option value=""></option>
+              <option value="Brussels">Delivery by hand</option>
+              <option value="Luxembourg">Registered letter</option>
+              <option value="Strasbourg">
+                Registered letter with acknowledgement of receipt
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="flex w-full">
+        <div class="w-full flex items-center mb-2">
+          <label class="text-sm font-normal flex w-1/5 items-center"
+            >Delivery reference
+          </label>
+          <div class="relative flex w-4/5">
+            <input
               type="text"
               class="py-2 px-4 text-xs block w-full border-[#f8f9fa] bg-[#f8f9fa] rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
             />
           </div>
         </div>
-        <div class="flex w-1/2 gap-5 justify-end">
-          <select
-            class="border border-[#f8f9fa] bg-[#f8f9fa] rounded py-1 px-2 text-xs h-fit"
-            id=""
-          >
-            <option value="">Main Element</option>
-            <option value="">Annex</option>
-            <option value="">SG accord</option>
-            <option value="">Translation</option>
-          </select>
-
-          <label class="inline-flex items-center cursor-pointer text-xs">
-            <input type="checkbox" value="" class="sr-only peer" checked />
-            <div
-              class="relative w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
-            ></div>
-            <span
-              class="ms-3 text-xs font-medium text-gray-900 dark:text-gray-300"
-              >Public</span
-            >
+      </div>
+      <div class="flex w-full">
+        <div class="w-full flex items-center mb-2">
+          <label class="text-sm font-normal flex w-1/5 items-center"
+            >GEPRO+ reference
           </label>
-
-          <button class="px-1 text-[#3c77bd]">
-            <i class="bi bi-trash"></i>
-          </button>
-        </div>
-      </div>
-      }
-    </div>
-    }
-  </div>
-</div>
-<div class="flex w-full px-7 border-b">
-  <div class="flex w-1/2 flex-col py-6 pe-7 border-r">
-    <h2 class="font-medium mb-2">Restrictions</h2>
-    <div class="flex w-full">
-      <div class="w-full flex items-center mb-2">
-        <label
-          for="hs-inline-leading-select-label"
-          class="block text-sm font-normal flex w-1/5"
-          >Marking
-        </label>
-        <div class="relative flex w-4/5">
-          <input
-            type="text"
-            id="hs-inline-leading-select-label"
-            name="inline-add-on"
-            class="py-2 px-4 text-xs block w-full border-[#f8f9fa] bg-[#f8f9fa] rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-          />
-        </div>
-      </div>
-    </div>
-    <div class="flex w-full mb-1">
-      <div class="w-full flex items-center mb-2">
-        <label
-          for="hs-inline-leading-select-label"
-          class="block text-sm font-normal flex w-1/5"
-          >Internal
-        </label>
-
-        <div class="relative flex w-4/5">
-          <div class="w-2/12">
-            <label
-              for="Toggle4"
-              class="inline-flex items-center rounded-md cursor-pointer text-xs border"
-            >
-              <input
-                id="Toggle4"
-                type="checkbox"
-                class="hidden peer"
-                [formControl]="internalControl"
-              />
-              <span
-                class="px-4 py-1 rounded-l-md text-[#3c77bd]"
-                [ngClass]="{
-                  'bg-[#3c77bd]': internalControl.value,
-                  'text-white': internalControl.value
-                }"
-                >Yes</span
-              >
-              <span
-                class="px-4 py-1 rounded-r-md text-[#3c77bd]"
-                [ngClass]="{
-                  'bg-[#adb5bd]': !internalControl.value,
-                  'text-white': !internalControl.value
-                }"
-                >No</span
-              >
-            </label>
-          </div>
-          <div class="w-10/12">
-            <select
-              [disabled]="!internalControl.value"
-              placeHolder="Entity name"
-              class="border border-[#f8f9fa] bg-[#f8f9fa] rounded py-1 px-2 text-xs h-fit w-full"
-            >
-              <option value="">Entity name</option>
-              <option value="staff matters">Staff Matters</option>
-            </select>
+          <div class="relative flex w-4/5">
+            <input
+              type="text"
+              class="py-2 px-4 text-xs block w-full border-[#f8f9fa] bg-[#f8f9fa] rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+            />
           </div>
         </div>
       </div>
-    </div>
-    <div class="flex w-full mb-1">
-      <div class="w-full flex items-center mb-2">
+      <div class="flex items-center w-full">
+        <input
+          id="link-checkbox"
+          type="checkbox"
+          value=""
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+        />
         <label
-          for="hs-inline-leading-select-label"
-          class="block text-sm font-normal flex w-1/5"
-          >Embargo until
-        </label>
-        <div class="relative flex w-4/5">
-          <input
-            type="date"
-            class="border-[#f8f9fa] bg-[#f8f9fa] w-full rounded border text-gray-900 text-xs focus:ring-blue-500 focus:border-blue-500 block p-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="Select date"
-          />
-        </div>
-      </div>
-    </div>
-    <div class="flex w-full gap-5">
-      <div class="flex flex-col">
-        <label class="mb-1 text-xs">Drafting mode:</label>
-        <label
-          for="Toggle10"
-          class="inline-flex items-center rounded-md cursor-pointer text-xs border"
+          for="link-checkbox"
+          class="ms-2 text-sm font-light text-gray-900 dark:text-gray-300"
+          >Translation requested</label
         >
-          <input
-            id="Toggle10"
-            type="checkbox"
-            class="hidden peer"
-            [formControl]="draftingControl"
-          />
-          <span
-            class="px-4 py-1 rounded-l-md text-[#3c77bd]"
-            [ngClass]="{
-              'bg-[#adb5bd]': !draftingControl.value,
-              'text-white': !draftingControl.value
-            }"
-            >Unrestricted</span
-          >
-          <span
-            class="px-4 py-1 rounded-r-md text-[#3c77bd]"
-            [ngClass]="{
-              'bg-[#3c77bd]': draftingControl.value,
-              'text-white': draftingControl.value
-            }"
-            >Restricted</span
-          >
-        </label>
-      </div>
-      <div class="flex flex-col">
-        <label class="mb-1 text-xs">Limited:</label>
-        <label
-          for="Toggle5"
-          class="inline-flex items-center rounded-md cursor-pointer text-xs border"
-        >
-          <input
-            id="Toggle5"
-            type="checkbox"
-            class="hidden peer"
-            [formControl]="limitedControl"
-          />
-          <span
-            class="px-4 py-1 rounded-l-md text-[#3c77bd]"
-            [ngClass]="{
-              'bg-[#adb5bd]': !limitedControl.value,
-              'text-white': !limitedControl.value
-            }"
-            >Unlimited</span
-          >
-          <span
-            class="px-4 py-1 rounded-r-md text-[#3c77bd]"
-            [ngClass]="{
-              'bg-[#3c77bd]': limitedControl.value,
-              'text-white': limitedControl.value
-            }"
-            >Limited</span
-          >
-        </label>
-      </div>
-      <div class="flex flex-col">
-        <label class="mb-1 text-xs">Personal:</label>
-        <label
-          for="Toggle6"
-          class="inline-flex items-center rounded-md cursor-pointer text-xs border"
-        >
-          <input
-            id="Toggle6"
-            type="checkbox"
-            class="hidden peer"
-            [formControl]="personalControl"
-          />
-          <span
-            class="px-4 py-1 rounded-l-md text-[#3c77bd]"
-            [ngClass]="{
-              'bg-[#adb5bd]': !personalControl.value,
-              'text-white': !personalControl.value
-            }"
-            >Not personal</span
-          >
-          <span
-            class="px-4 py-1 rounded-r-md text-[#3c77bd]"
-            [ngClass]="{
-              'bg-[#3c77bd]': personalControl.value,
-              'text-white': personalControl.value
-            }"
-            >Personal</span
-          >
-        </label>
-      </div>
-      <div class="flex flex-col">
-        <label class="mb-1 text-xs">Transparency:</label>
-        <label
-          for="Toggle7"
-          class="inline-flex items-center rounded-md cursor-pointer text-xs border"
-        >
-          <input
-            id="Toggle7"
-            type="checkbox"
-            class="hidden peer"
-            [formControl]="transparencyControl"
-          />
-          <span
-            class="px-4 py-1 rounded-l-md text-[#3c77bd]"
-            [ngClass]="{
-              'bg-[#adb5bd]': !transparencyControl.value,
-              'text-white': !transparencyControl.value
-            }"
-            >No</span
-          >
-          <span
-            class="px-4 py-1 rounded-r-md text-[#3c77bd]"
-            [ngClass]="{
-              'bg-[#3c77bd]': transparencyControl.value,
-              'text-white': transparencyControl.value
-            }"
-            >Yes</span
-          >
-        </label>
       </div>
     </div>
   </div>
-  <div class="flex w-1/2 py-4 ps-7 flex-col">
-    <h2 class="font-medium mb-2">Aditional information</h2>
-    <div class="flex w-full">
-      <div class="w-full flex items-center mb-2">
-        <label class="text-sm font-normal flex w-1/5 items-center"
-          >Registration place
-        </label>
-        <div class="relative flex w-4/5">
-          <select
-            placeHolder="Entity name"
-            class="border border-[#f8f9fa] bg-[#f8f9fa] rounded py-1.5 px-2 text-xs h-fit w-full"
-          >
-            <option value=""></option>
-            <option value="Brussels">Brussels</option>
-            <option value="Luxembourg">Luxembourg</option>
-            <option value="Strasbourg">Strasbourg</option>
-          </select>
-        </div>
-      </div>
-    </div>
-    <div class="flex w-full">
-      <div class="w-full flex items-center mb-2">
-        <label class="text-sm font-normal flex w-1/5 items-center"
-          >Type of delivery
-        </label>
-        <div class="relative flex w-4/5">
-          <select
-            placeHolder="Entity name"
-            class="border border-[#f8f9fa] bg-[#f8f9fa] rounded py-1.5 px-2 text-xs h-fit w-full"
-          >
-            <option value=""></option>
-            <option value="Brussels">Delivery by hand</option>
-            <option value="Luxembourg">Registered letter</option>
-            <option value="Strasbourg">
-              Registered letter with acknowledgement of receipt
-            </option>
-          </select>
-        </div>
-      </div>
-    </div>
-    <div class="flex w-full">
-      <div class="w-full flex items-center mb-2">
-        <label class="text-sm font-normal flex w-1/5 items-center"
-          >Delivery reference
-        </label>
-        <div class="relative flex w-4/5">
-          <input
-            type="text"
-            class="py-2 px-4 text-xs block w-full border-[#f8f9fa] bg-[#f8f9fa] rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-          />
-        </div>
-      </div>
-    </div>
-    <div class="flex w-full">
-      <div class="w-full flex items-center mb-2">
-        <label class="text-sm font-normal flex w-1/5 items-center"
-          >GEPRO+ reference
-        </label>
-        <div class="relative flex w-4/5">
-          <input
-            type="text"
-            class="py-2 px-4 text-xs block w-full border-[#f8f9fa] bg-[#f8f9fa] rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-          />
-        </div>
-      </div>
-    </div>
-    <div class="flex items-center w-full">
-      <input
-        id="link-checkbox"
-        type="checkbox"
-        value=""
-        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-      />
-      <label
-        for="link-checkbox"
-        class="ms-2 text-sm font-light text-gray-900 dark:text-gray-300"
-        >Translation requested</label
-      >
-    </div>
+  <div class="flex w-full py-2 px-6 justify-end">
+    <button
+      class="font-normal text-[#3c77bd] focus:ring-4 focus:ring-blue-300 rounded-[4px] text-sm px-4 py-1.5 me-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+    >
+      Cancel
+    </button>
+    <button
+      class="font-normal text-[#3c77bd] border border-[#3c77bd] hover:bg-[#3c77bd] hover:text-white focus:ring-4 focus:ring-blue-300 rounded-[4px] text-sm px-4 py-1.5 me-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+    >
+      Save temporarily
+    </button>
+    <button
+      class="font-normal text-white bg-[#3c77bd] hover:bg-[#2b5f9e] border-[#3c77bd] focus:ring-4 focus:ring-blue-300 rounded-[4px] text-sm px-4 py-1.5 me-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+    >
+      Register document
+    </button>
   </div>
 </div>
-<div class="flex w-full py-2 px-6 justify-end">
-  <button
-    class="font-normal text-[#3c77bd] focus:ring-4 focus:ring-blue-300 rounded-[4px] text-sm px-4 py-1.5 me-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-  >
-    Cancel
-  </button>
-  <button
-    class="font-normal text-[#3c77bd] border border-[#3c77bd] hover:bg-[#3c77bd] hover:text-white focus:ring-4 focus:ring-blue-300 rounded-[4px] text-sm px-4 py-1.5 me-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-  >
-    Save temporarily
-  </button>
-  <button
-    class="font-normal text-white bg-[#3c77bd] hover:bg-[#2b5f9e] border-[#3c77bd] focus:ring-4 focus:ring-blue-300 rounded-[4px] text-sm px-4 py-1.5 me-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-  >
-    Register document
-  </button>
-</div>
-
-<!-- <div class="document-form">
-<form [formGroup]="documentForm" (ngSubmit)="onSubmit()">
-  
-  <section class="section">    
-    <div class="form-group">
-      <label for="documentTitle">Document title *</label>
-      <input id="documentTitle" type="text" formControlName="documentTitle" class="border-[#f8f9fa] bg-[#f8f9fa] rounded w-full text-sm py-1.5 px-2">
-    </div>
-
-    <div class="form-row">
-      <div class="form-group">
-        <label for="documentType">Document type *</label>
-        <input id="documentType" type="text" formControlName="documentType" class="form-control">
-      </div>
-
-      <div class="form-group">
-        <label for="documentDate">Document date</label>
-        <input id="documentDate" type="date" formControlName="documentDate" class="form-control">
-      </div>
-
-      <div class="form-group">
-        <label>Format</label>
-        <div class="format-options">
-          <label *ngFor="let format of formats">
-            <input type="radio" [value]="format" formControlName="format">
-            {{format}}
-          </label>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="mainLanguage">Main language</label>
-        <select id="mainLanguage" formControlName="mainLanguage" class="form-control">
-          <option *ngFor="let lang of languages" [value]="lang">{{lang}}</option>
-        </select>
-      </div>
-    </div>
-  </section>
-
-  
-  <section class="section">
-    <h2 class="section-title">Restrictions</h2>
-    <div class="form-row">
-      <div class="form-group">
-        <label for="marking">Marking</label>
-        <input id="marking" type="text" formControlName="marking" class="form-control">
-      </div>
-
-      <div class="form-group">
-        <label for="draftingMode">Drafting mode</label>
-        <div class="toggle">
-          <input id="draftingMode" type="checkbox" formControlName="draftingMode">
-          <label for="draftingMode">Unrestricted</label>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="embargoUntil">Embargo until</label>
-        <input id="embargoUntil" type="date" formControlName="embargoUntil" class="form-control">
-      </div>
-    </div>
-  </section>
-
-  
-  <section class="section">
-    <h2 class="section-title">Recipients</h2>
-    <div class="form-row">
-      <div class="form-group">
-        <label for="from">From</label>
-        <input id="from" type="text" formControlName="from" class="form-control">
-      </div>
-
-      <div class="form-group">
-        <label for="isAnonymous">Anonymous</label>
-        <input id="isAnonymous" type="checkbox" formControlName="isAnonymous">
-      </div>
-
-      <div class="form-group">
-        <label for="to">To</label>
-        <input id="to" type="text" formControlName="to" class="form-control">
-      </div>
-    </div>
-  </section>
-
-
-  <section class="section">
-    <h2 class="section-title">Files</h2>
-    <div class="file-upload-area">
-      <div class="upload-placeholder">
-        <i class="fas fa-cloud-upload-alt"></i>
-        <p>Drag files to this area to upload or browse</p>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="section">
-    <h2 class="section-title">Advanced Information</h2>
-    <div class="form-row">
-      <div class="form-group">
-        <label>Additional Options</label>
-        <div class="checkbox-group">
-          <label>
-            <input type="checkbox" formControlName="annexesScanned">
-            Annexes scanned
-          </label>
-          <label>
-            <input type="checkbox" formControlName="translationRequested">
-            Translation requested
-          </label>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <div class="form-actions">
-    <button type="button" class="btn btn-secondary" (click)="onCancel()">Cancel</button>
-    <button type="button" class="btn btn-secondary" (click)="onSaveTemporarily()">Save temporarily</button>
-    <button type="submit" class="btn btn-primary" [disabled]="!documentForm.valid">Register document</button>
-  </div>
-</form>
-</div> -->
